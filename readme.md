@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.com/aerni/laravel-spotify-dev.svg?token=qUPUsGwCwUCz24a3nMsY&branch=master)](https://travis-ci.com/aerni/laravel-spotify-dev)
+[![Build Status](https://travis-ci.com/aerni/laravel-spotify.svg?branch=v1.0.0)](https://travis-ci.com/aerni/laravel-spotify)
 
 # Laravel-Spotify
-This package makes working with the Spotify API a breeze. It provides simple methods and a fluent interface for optional endpoint parameters. The package supports all API endpoints that are accessible with the [Client Credentials Flow](https://developer.spotify.com/documentation/general/guides/authorization-guide/#client-credentials-flow).
+This package makes working with the Spotify Web API a breeze. It provides simple methods and a fluent interface for optional endpoint parameters. The package supports all API endpoints that are accessible with the [Client Credentials Flow](https://developer.spotify.com/documentation/general/guides/authorization-guide/#client-credentials-flow).
 
 # Installation
 Install the package using Composer. The package will automatically register itself.
