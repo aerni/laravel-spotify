@@ -1,7 +1,13 @@
-[![Build Status](https://travis-ci.com/aerni/laravel-spotify.svg?branch=v1.0.0)](https://travis-ci.com/aerni/laravel-spotify)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/aerni/laravel-spotify?style=flat-square)
+![Packagist](https://img.shields.io/packagist/dt/aerni/laravel-spotify?style=flat-square)
+![Travis (.com)](https://img.shields.io/travis/com/aerni/laravel-spotify?style=flat-square)
+[![StyleCI](https://github.styleci.io/repos/244674855/shield?branch=master)](https://github.styleci.io/repos/244674855)
+![GitHub](https://img.shields.io/github/license/aerni/laravel-spotify?style=flat-square)
 
-# Laravel-Spotify
-This package makes working with the Spotify Web API a breeze. It provides simple methods and a fluent interface for optional endpoint parameters. The package supports all API endpoints that are accessible with the [Client Credentials Flow](https://developer.spotify.com/documentation/general/guides/authorization-guide/#client-credentials-flow).
+# An easy to use Spotify Web API wrapper for Laravel
+This Laravel package makes working with the Spotify Web API a breeze. It provides straight forward methods for each endpoint and a fluent interface for optional parameters.
+
+The package supports all Spotify Web API endpoints that are accessible with the [Client Credentials Flow](https://developer.spotify.com/documentation/general/guides/authorization-guide/#client-credentials-flow).
 
 # Installation
 Install the package using Composer. The package will automatically register itself.
@@ -65,7 +71,7 @@ SPOTIFY_DEFAULT_MARKET=US
 ```
 
 # Basic Usage
-Import the package at the top of your file.
+Import the package at the top of your file. All of the following examples make use of [Laravel Facades](https://laravel.com/docs/master/facades).
 
 ```php
 use Spotify;
@@ -78,7 +84,7 @@ Search for tracks with the name `Closed on Sunday`.
 Spotify::searchTracks('Closed on Sunday')->get();
 ```
 
-> **Important:** The `get()` method acts as the `final method` of the fluent interface. To make a request to the Spotify API, you always need to call `get()` at the end of the method chain.
+> **Important:** The `get()` method acts as the `final method` of the fluent interface. To make a request to the Spotify Web API, you always need to call `get()` at the end of the method chain.
 
 # Advanced Usage
 You may pass optional parameters to your request using the fluent interface provided by this package. A common use case is to set a `limit` and `offset`.
@@ -152,7 +158,7 @@ Spotify::albums(['album_id', 'album_id_2', 'album_id_3'])->get();
 ```
 
 ## Albums
-[Spotify API Reference on Albums](https://developer.spotify.com/documentation/web-api/reference/albums/)
+[Spotify Web API Reference on Albums](https://developer.spotify.com/documentation/web-api/reference/albums/)
 
 ```php
 // Get an album by ID.
@@ -166,7 +172,7 @@ Spotify::albumTracks('album_id')->get();
 ```
 
 ## Artists
-[Spotify API Reference on Artists](https://developer.spotify.com/documentation/web-api/reference/artists/)
+[Spotify Web API Reference on Artists](https://developer.spotify.com/documentation/web-api/reference/artists/)
 
 ```php
 // Get an artist by ID.
@@ -186,7 +192,7 @@ Spotify::artistRelatedArtists('artist_id')->get();
 ```
 
 ## Browse
-[Spotify API Reference on Browse](https://developer.spotify.com/documentation/web-api/reference/browse/)
+[Spotify Web API Reference on Browse](https://developer.spotify.com/documentation/web-api/reference/browse/)
 
 ```php
 // Get a category by ID.
@@ -212,7 +218,7 @@ Spotify::recommendations($seed)->get();
 ```
 
 ## Playlists
-[Spotify API Reference on Playlists](https://developer.spotify.com/documentation/web-api/reference/playlists/)
+[Spotify Web API Reference on Playlists](https://developer.spotify.com/documentation/web-api/reference/playlists/)
 
 ```php
 // Get a playlist by ID.
@@ -226,7 +232,7 @@ Spotify::playlistCoverImage('playlist_id')->get();
 ```
 
 ## Search
-[Spotify API Reference on Search](https://developer.spotify.com/documentation/web-api/reference/search/search/)
+[Spotify Web API Reference on Search](https://developer.spotify.com/documentation/web-api/reference/search/search/)
 
 ```php
 // Search items by query. Provide a string or array to the second parameter.
@@ -246,7 +252,7 @@ Spotify::searchTracks('query')->get();
 ```
 
 ## Tracks
-[Spotify API Reference on Tracks](https://developer.spotify.com/documentation/web-api/reference/tracks/)
+[Spotify Web API Reference on Tracks](https://developer.spotify.com/documentation/web-api/reference/tracks/)
 
 ```php
 // Get a track by ID.
