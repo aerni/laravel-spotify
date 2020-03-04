@@ -1,10 +1,11 @@
 <?php
 
-namespace Aerni\Spotify\Traits;
 
-use Exception;
+namespace Aerni\Spotify;
 
-trait HelpersTrait
+use Aerni\Spotify\Exceptions\ValidatorException;
+
+class Validator
 {
     /**
      * Validate the provided argument. Throw an error if the argument is not valid.
@@ -12,14 +13,14 @@ trait HelpersTrait
      * @param string $key
      * @param $argument
      * @return string
-     * @throws Exception
+     * @throws ValidatorException
      */
-    private function validateArgument(string $key, $argument): string
+    public static function validateArgument(string $key, $argument): string
     {
-        if ($this->argumentIsValid($argument)) {
-            return $this->normalizeArgument($argument);
+        if (Self::argumentIsValid($argument)) {
+            return Self::normalizeArgument($argument);
         } else {
-            throw new Exception("Please provide a string with comma-separated values or an array as the argument to the [{$key}] parameter.");
+            throw new ValidatorException("Please provide a string with comma-separated values or an array as the argument to the [{$key}] parameter.");
         }
     }
 
@@ -29,7 +30,7 @@ trait HelpersTrait
      * @param $argument
      * @return string
      */
-    private function normalizeArgument($argument): string
+    private static function normalizeArgument($argument): string
     {
         if (is_array($argument)) {
             $argument = collect($argument)->implode(',');
@@ -46,7 +47,7 @@ trait HelpersTrait
      * @param $argument
      * @return bool
      */
-    private function argumentIsValid($argument): bool
+    private static function argumentIsValid($argument): bool
     {
         if (!empty($argument) && is_array($argument)) {
             return true;
@@ -65,7 +66,7 @@ trait HelpersTrait
      * @param $value
      * @return string|null
      */
-    private function emptyStringToNull(string $value)
+    public static function emptyStringToNull(string $value)
     {
         return is_string($value) && $value === '' ? null : $value;
     }
