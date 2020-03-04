@@ -68,7 +68,7 @@ class SpotifySeed
      */
     public function addArtist(string $id): self
     {
-        if (!$this->artists->contains($id)) {
+        if (! $this->artists->contains($id)) {
             $this->artists->push($id);
         }
 
@@ -127,7 +127,7 @@ class SpotifySeed
      */
     public function addGenre(string $id): self
     {
-        if (!$this->genres->contains($id)) {
+        if (! $this->genres->contains($id)) {
             $this->genres->push($id);
         }
 
@@ -186,7 +186,7 @@ class SpotifySeed
      */
     public function addTrack(string $id): self
     {
-        if (!$this->tracks->contains($id)) {
+        if (! $this->tracks->contains($id)) {
             $this->tracks->push($id)->toArray();
         }
 
@@ -690,16 +690,16 @@ class SpotifySeed
 
         foreach ($ranges as $field => $range) {
             if (count($range) > 0) {
-                $collection->put('min_' . $field, $range[0]);
-                $collection->put('max_' . $field, $range[1]);
+                $collection->put('min_'.$field, $range[0]);
+                $collection->put('max_'.$field, $range[1]);
             }
         }
 
         $targets = $this->getTargetsArray();
 
         foreach ($targets as $field => $target) {
-            if (!is_null($target)) {
-                $collection->put('target_' . $field, $target);
+            if (! is_null($target)) {
+                $collection->put('target_'.$field, $target);
             }
         }
 

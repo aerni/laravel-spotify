@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Aerni\Spotify;
 
 use Aerni\Spotify\Exceptions\ValidatorException;
@@ -17,8 +16,8 @@ class Validator
      */
     public static function validateArgument(string $key, $argument): string
     {
-        if (Self::argumentIsValid($argument)) {
-            return Self::normalizeArgument($argument);
+        if (self::argumentIsValid($argument)) {
+            return self::normalizeArgument($argument);
         } else {
             throw new ValidatorException("Please provide a string with comma-separated values or an array as the argument to the [{$key}] parameter.");
         }
@@ -49,11 +48,11 @@ class Validator
      */
     private static function argumentIsValid($argument): bool
     {
-        if (!empty($argument) && is_array($argument)) {
+        if (! empty($argument) && is_array($argument)) {
             return true;
         }
 
-        if (!empty($argument) && is_string($argument)) {
+        if (! empty($argument) && is_string($argument)) {
             return true;
         }
 

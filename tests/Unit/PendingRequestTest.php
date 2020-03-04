@@ -2,8 +2,8 @@
 
 namespace Aerni\Spotify\Tests;
 
-use Exception;
 use Aerni\Spotify\PendingRequest;
+use Exception;
 
 class PendingRequestTest extends TestCase
 {

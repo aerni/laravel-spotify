@@ -2,11 +2,11 @@
 
 namespace Aerni\Spotify\Tests;
 
-use Spotify;
-use Aerni\Spotify\SpotifyAuth;
-use Aerni\Spotify\SpotifyRequest;
 use Aerni\Spotify\Exceptions\SpotifyApiException;
 use Aerni\Spotify\Exceptions\SpotifyAuthException;
+use Aerni\Spotify\SpotifyAuth;
+use Aerni\Spotify\SpotifyRequest;
+use Spotify;
 
 class SpotifyExceptionTest extends TestCase
 {
