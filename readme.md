@@ -107,19 +107,19 @@ Spotify::artistAlbums('artist_id')->country('US')->get();
 Spotify::playlist('playlist_id')->fields('description, uri')->get();
 
 // Include any relevant content that is hosted externally.
-Spotify::searchTracks('Closed on Sunday')->includeExternal('audio')->get();
+Spotify::searchTracks('query')->includeExternal('audio')->get();
 
 // Filter the response using the provided string.
 Spotify::artistAlbums('artist_id')->includeGroups('album, single, appears_on, compilation')->get();
 
 // Set the number of track objects to be returned.
-Spotify::searchTracks('Closed on Sunday')->limit(10)->get();
+Spotify::searchTracks('query')->limit(10)->get();
 
 // Set the index of the first track to be returned.
-Spotify::searchTracks('Closed on Sunday')->offset(10)->get();
+Spotify::searchTracks('query')->offset(10)->get();
 
 // Limit the response to a particular geographical market.
-Spotify::searchAlbums('JESUS IS KING')->market('US')->get();
+Spotify::searchAlbums('query')->market('US')->get();
 
 // Limit the response to a particular language.
 Spotify::category('category_id')->locale('en_US')->get();
@@ -133,7 +133,7 @@ You may want to reset the default setting of `country`, `locale` or `market` for
 
 ```php
 // This will reset the default market to nothing.
-Spotify::searchTracks('Closed on Sunday')->market()->get();
+Spotify::searchTracks('query')->market()->get();
 ```
 
 ## Response Key
@@ -141,7 +141,7 @@ Some API responses are wrapped in a top level object like `artists` or `tracks`.
 
 ```php
 // This will return the content of the tracks object.
-Spotify::searchTracks('Closed on Sunday')->get('tracks');
+Spotify::searchTracks('query')->get('tracks');
 ```
 
 # API Usage
