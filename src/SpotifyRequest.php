@@ -28,11 +28,11 @@ class SpotifyRequest
     public function get(string $endpoint, array $params = []): array
     {
         try {
-            $response = Guzzle::get(Self::SPOTIFY_API_URL . $endpoint . '?' . http_build_query($params), [
+            $response = Guzzle::get(self::SPOTIFY_API_URL.$endpoint.'?'.http_build_query($params), [
                 'headers' => [
                     'Content-Type' => 'application/json',
                     'Accepts' => 'application/json',
-                    'Authorization' => 'Bearer ' . $this->accessToken,
+                    'Authorization' => 'Bearer '.$this->accessToken,
                 ],
             ]);
         } catch (RequestException $e) {

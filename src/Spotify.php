@@ -2,10 +2,6 @@
 
 namespace Aerni\Spotify;
 
-use Aerni\Spotify\PendingRequest;
-use Aerni\Spotify\SpotifySeed;
-use Aerni\Spotify\Validator;
-
 class Spotify
 {
     private $defaultConfig;
@@ -25,7 +21,7 @@ class Spotify
      */
     public function album(string $id): PendingRequest
     {
-        $endpoint = '/albums/' . $id;
+        $endpoint = '/albums/'.$id;
 
         $acceptedParams = [
             'market' => $this->defaultConfig['market'],
@@ -42,7 +38,7 @@ class Spotify
      */
     public function albumTracks(string $id): PendingRequest
     {
-        $endpoint = '/albums/' . $id . '/tracks/';
+        $endpoint = '/albums/'.$id.'/tracks/';
 
         $acceptedParams = [
             'limit' => null,
@@ -79,7 +75,7 @@ class Spotify
      */
     public function artist(string $id): PendingRequest
     {
-        $endpoint = '/artists/' . $id;
+        $endpoint = '/artists/'.$id;
 
         return new PendingRequest($endpoint);
     }
@@ -92,7 +88,7 @@ class Spotify
      */
     public function artistAlbums(string $id): PendingRequest
     {
-        $endpoint = '/artists/' . $id . '/albums/';
+        $endpoint = '/artists/'.$id.'/albums/';
 
         $acceptedParams = [
             'include_groups' => null,
@@ -112,7 +108,7 @@ class Spotify
      */
     public function artistTopTracks(string $id): PendingRequest
     {
-        $endpoint = '/artists/' . $id . '/top-tracks/';
+        $endpoint = '/artists/'.$id.'/top-tracks/';
 
         $acceptedParams = [
             'country' => $this->defaultConfig['country'],
@@ -129,7 +125,7 @@ class Spotify
      */
     public function artistRelatedArtists(string $id): PendingRequest
     {
-        $endpoint = '/artists/' . $id . '/related-artists/';
+        $endpoint = '/artists/'.$id.'/related-artists/';
 
         return new PendingRequest($endpoint);
     }
@@ -159,7 +155,7 @@ class Spotify
      */
     public function category(string $id): PendingRequest
     {
-        $endpoint = '/browse/categories/' . $id;
+        $endpoint = '/browse/categories/'.$id;
 
         $acceptedParams = [
             'country' => $this->defaultConfig['country'],
@@ -177,7 +173,7 @@ class Spotify
      */
     public function categoryPlaylists(string $id): PendingRequest
     {
-        $endpoint = '/browse/categories/' . $id . '/playlists/';
+        $endpoint = '/browse/categories/'.$id.'/playlists/';
 
         $acceptedParams = [
             'country' => $this->defaultConfig['country'],
@@ -283,7 +279,7 @@ class Spotify
      */
     public function playlistCoverImage(string $id): PendingRequest
     {
-        $endpoint = '/playlists/' . $id . '/images/';
+        $endpoint = '/playlists/'.$id.'/images/';
 
         return new PendingRequest($endpoint);
     }
@@ -296,7 +292,7 @@ class Spotify
      */
     public function playlist(string $id): PendingRequest
     {
-        $endpoint = '/playlists/' . $id;
+        $endpoint = '/playlists/'.$id;
 
         $acceptedParams = [
             'fields' => null,
@@ -314,7 +310,7 @@ class Spotify
      */
     public function playlistTracks(string $id): PendingRequest
     {
-        $endpoint = '/playlists/' . $id . '/tracks/';
+        $endpoint = '/playlists/'.$id.'/tracks/';
 
         $acceptedParams = [
             'fields' => null,
@@ -445,7 +441,7 @@ class Spotify
      */
     public function audioAnalysisForTrack(string $id): PendingRequest
     {
-        $endpoint = '/audio-analysis/' . $id;
+        $endpoint = '/audio-analysis/'.$id;
 
         return new PendingRequest($endpoint);
     }
@@ -458,7 +454,7 @@ class Spotify
      */
     public function audioFeaturesForTrack(string $id): PendingRequest
     {
-        $endpoint = '/audio-features/' . $id;
+        $endpoint = '/audio-features/'.$id;
 
         return new PendingRequest($endpoint);
     }
@@ -506,7 +502,7 @@ class Spotify
      */
     public function track(string $id): PendingRequest
     {
-        $endpoint = '/tracks/' . $id;
+        $endpoint = '/tracks/'.$id;
 
         $acceptedParams = [
             'market' => $this->defaultConfig['market'],

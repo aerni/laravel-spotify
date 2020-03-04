@@ -12,7 +12,7 @@ class SpotifyPathGenerator
      */
     public static function getAlbumUri(string $id): string
     {
-        return 'spotify:album:' . $id;
+        return 'spotify:album:'.$id;
     }
 
     /**
@@ -23,7 +23,7 @@ class SpotifyPathGenerator
      */
     public static function getArtistUri(string $id): string
     {
-        return 'spotify:artist:' . $id;
+        return 'spotify:artist:'.$id;
     }
 
     /**
@@ -34,7 +34,7 @@ class SpotifyPathGenerator
      */
     public static function getPlaylistUri(string $id): string
     {
-        return 'spotify:user:spotify:playlist:' . $id;
+        return 'spotify:user:spotify:playlist:'.$id;
     }
 
     /**
@@ -45,7 +45,7 @@ class SpotifyPathGenerator
      */
     public static function getTrackUri(string $id): string
     {
-        return 'spotify:track:' . $id;
+        return 'spotify:track:'.$id;
     }
 
     /**
@@ -56,7 +56,7 @@ class SpotifyPathGenerator
      */
     public static function getAlbumUrl(string $id): string
     {
-        return 'https://open.spotify.com/album/' . $id;
+        return 'https://open.spotify.com/album/'.$id;
     }
 
     /**
@@ -67,7 +67,7 @@ class SpotifyPathGenerator
      */
     public static function getArtistUrl(string $id): string
     {
-        return 'https://open.spotify.com/artist/' . $id;
+        return 'https://open.spotify.com/artist/'.$id;
     }
 
     /**
@@ -78,7 +78,7 @@ class SpotifyPathGenerator
      */
     public static function getPlaylistUrl(string $id): string
     {
-        return 'https://open.spotify.com/playlist/' . $id;
+        return 'https://open.spotify.com/playlist/'.$id;
     }
 
     /**
@@ -89,6 +89,6 @@ class SpotifyPathGenerator
      */
     public static function getTrackUrl(string $id): string
     {
-        return 'https://open.spotify.com/track/' . $id;
+        return 'https://open.spotify.com/track/'.$id;
     }
 }

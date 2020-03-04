@@ -168,7 +168,7 @@ class PendingRequest
      */
     private function validateRequestedParam(string $key): void
     {
-        if (!array_key_exists($key, $this->acceptedParams)) {
+        if (! array_key_exists($key, $this->acceptedParams)) {
             throw new Exception("The parameter [{$key}] is not accepted for this API call.");
         }
     }

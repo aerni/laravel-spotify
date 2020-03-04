@@ -33,11 +33,11 @@ class SpotifyAuth
     private function generateAccessToken(): void
     {
         try {
-            $response = Guzzle::post(Self::SPOTIFY_API_TOKEN_URL, [
+            $response = Guzzle::post(self::SPOTIFY_API_TOKEN_URL, [
                 'headers' => [
                     'Content-Type' => 'application/x-www-form-urlencoded',
                     'Accepts' => 'application/json',
-                    'Authorization' => 'Basic ' . base64_encode($this->clientId . ':' . $this->clientSecret),
+                    'Authorization' => 'Basic '.base64_encode($this->clientId.':'.$this->clientSecret),
                 ],
                 'form_params' => [
                     'grant_type' => 'client_credentials',
@@ -50,7 +50,6 @@ class SpotifyAuth
 
             throw new SpotifyAuthException($message, $status, $errorResponse);
         }
-
 
         $body = json_decode((string) $response->getBody());
 
@@ -68,7 +67,7 @@ class SpotifyAuth
      */
     public function getAccessToken(): string
     {
-        if (!$this->accessTokenIsSet()) {
+        if (! $this->accessTokenIsSet()) {
             $this->generateAccessToken();
         }
 
