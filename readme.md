@@ -60,7 +60,7 @@ return [
 ];
 ```
 
-Create a new App in the [Spotify Developers Dashboard](https://developer.spotify.com/dashboard) and set the `Client ID` and `Client Secret` in your `.env` file. You may also set default values for `country`, `locale` and `market` that will be used for every API request that support the corresponding parameter.
+Create a new App in the [Spotify Developers Dashboard](https://developer.spotify.com/dashboard) and set the `Client ID` and `Client Secret` in your `.env` file. You may also set default values for `country`, `locale` and `market`. They will be passed as optional parameters to every endpoint that support the corresponding parameter.
 
 ```env
 SPOTIFY_CLIENT_ID=********************************
