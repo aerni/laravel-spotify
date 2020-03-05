@@ -37,10 +37,10 @@ class SpotifyServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $this->mergeConfigFrom(__DIR__ . '../../config/spotify.php', 'spotify');
+        $this->mergeConfigFrom(__DIR__ . '/../../config/spotify.php', 'spotify');
 
         $this->publishes([
-            __DIR__ . '../../config/spotify.php' => config_path('spotify.php'),
+            __DIR__ . '/../../config/spotify.php' => config_path('spotify.php'),
         ]);
     }
 }
