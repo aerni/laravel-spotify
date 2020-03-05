@@ -3,7 +3,7 @@
 namespace Aerni\Spotify;
 
 use SpotifyClient;
-use Carbon\Carbon;
+use Illuminate\Support\Carbon;
 use GuzzleHttp\Exception\RequestException;
 use Aerni\Spotify\Exceptions\SpotifyAuthException;
 
