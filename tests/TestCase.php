@@ -10,7 +10,7 @@ abstract class TestCase extends Orchestra
     protected function getEnvironmentSetUp($app): void
     {
         // Load the .env file
-        $app->useEnvironmentPath(__DIR__.'/..');
+        $app->useEnvironmentPath(__DIR__ . '/..');
         $app->bootstrapWith([LoadEnvironmentVariables::class]);
         parent::getEnvironmentSetUp($app);
 
@@ -31,7 +31,7 @@ abstract class TestCase extends Orchestra
     protected function getPackageProviders($app): array
     {
         return [
-            'Kozz\Laravel\Providers\Guzzle',
+            'Aerni\Spotify\Providers\SpotifyClientServiceProvider',
             'Aerni\Spotify\SpotifyServiceProvider',
         ];
     }
@@ -39,7 +39,7 @@ abstract class TestCase extends Orchestra
     protected function getPackageAliases($app): array
     {
         return [
-            'Guzzle' => 'Kozz\Laravel\Facades\Guzzle',
+            'SpotifyClient' => 'Aerni\Spotify\Facades\SpotifyClientFacade',
             'Spotify' => 'Aerni\Spotify\SpotifyFacade',
         ];
     }

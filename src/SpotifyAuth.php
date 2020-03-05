@@ -2,10 +2,10 @@
 
 namespace Aerni\Spotify;
 
-use Aerni\Spotify\Exceptions\SpotifyAuthException;
+use SpotifyClient;
 use Carbon\Carbon;
-use Guzzle;
 use GuzzleHttp\Exception\RequestException;
+use Aerni\Spotify\Exceptions\SpotifyAuthException;
 
 class SpotifyAuth
 {
@@ -33,11 +33,11 @@ class SpotifyAuth
     private function generateAccessToken(): void
     {
         try {
-            $response = Guzzle::post(self::SPOTIFY_API_TOKEN_URL, [
+            $response = SpotifyClient::post(self::SPOTIFY_API_TOKEN_URL, [
                 'headers' => [
                     'Content-Type' => 'application/x-www-form-urlencoded',
                     'Accepts' => 'application/json',
-                    'Authorization' => 'Basic '.base64_encode($this->clientId.':'.$this->clientSecret),
+                    'Authorization' => 'Basic ' . base64_encode($this->clientId . ':' . $this->clientSecret),
                 ],
                 'form_params' => [
                     'grant_type' => 'client_credentials',
@@ -67,7 +67,7 @@ class SpotifyAuth
      */
     public function getAccessToken(): string
     {
-        if (! $this->accessTokenIsSet()) {
+        if (!$this->accessTokenIsSet()) {
             $this->generateAccessToken();
         }
 
