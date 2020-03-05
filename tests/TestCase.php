@@ -32,7 +32,7 @@ abstract class TestCase extends Orchestra
     {
         return [
             'Aerni\Spotify\Providers\SpotifyClientServiceProvider',
-            'Aerni\Spotify\SpotifyServiceProvider',
+            'Aerni\Spotify\Providers\SpotifyServiceProvider',
         ];
     }
 
@@ -40,7 +40,7 @@ abstract class TestCase extends Orchestra
     {
         return [
             'SpotifyClient' => 'Aerni\Spotify\Facades\SpotifyClientFacade',
-            'Spotify' => 'Aerni\Spotify\SpotifyFacade',
+            'Spotify' => 'Aerni\Spotify\Facades\\SpotifyFacade',
         ];
     }
 }
