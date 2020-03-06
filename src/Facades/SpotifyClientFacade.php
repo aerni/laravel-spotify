@@ -2,8 +2,8 @@
 
 namespace Aerni\Spotify\Facades;
 
-use Illuminate\Support\Facades\Facade;
 use Aerni\Spotify\Clients\SpotifyClient;
+use Illuminate\Support\Facades\Facade;
 
 class SpotifyClientFacade extends Facade
 {
