@@ -60,7 +60,8 @@
 			],
 			"aliases": {
 				"SpotifyClient": "Aerni\\Spotify\\Facades\\SpotifyClientFacade",
-				"Spotify": "Aerni\\Spotify\\Facades\\SpotifyFacade"
+				"Spotify": "Aerni\\Spotify\\Facades\\SpotifyFacade",
+				"SpotifySeed": "Aerni\\Spotify\\SpotifySeed"
 			}
 		}
 	},
