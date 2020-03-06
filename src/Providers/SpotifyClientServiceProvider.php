@@ -2,8 +2,8 @@
 
 namespace Aerni\Spotify\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use Aerni\Spotify\Clients\SpotifyClient;
+use Illuminate\Support\ServiceProvider;
 
 class SpotifyClientServiceProvider extends ServiceProvider
 {
