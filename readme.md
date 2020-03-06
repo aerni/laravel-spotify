@@ -47,7 +47,7 @@ Install the package using Composer. The package will automatically register itse
 composer require aerni/laravel-spotify
 ```
 
-Publish the config of this package.
+Publish the config of the package.
 
 ```bash
 php artisan vendor:publish --provider="Aerni\Spotify\Providers\SpotifyServiceProvider"
@@ -118,7 +118,7 @@ Search for tracks with the name `Closed on Sunday`.
 Spotify::searchTracks('Closed on Sunday')->get();
 ```
 
-**Important:** The `get()` method acts as the final method of the fluent interface. Make sure to always call it last in the method chain to make a request to the Spotify Web API.
+**Important:** The `get()` method acts as the final method of the fluent interface. Make sure to always call it last in the method chain to execute a request to the Spotify Web API.
 
 ## Optional Parameters
 You may pass optional parameters to your requests using the fluent interface provided by this package. A common use case is to set a `limit` and `offset` to your request.
@@ -321,13 +321,14 @@ $seed = (new SpotifySeed)
     ->setLiveness(0.3, 1.0);
 ```
 
-Get your personalized tracks by passing the `$seed` to the `recommendations method.
+Get your personalized tracks by passing the `$seed` to the `recommendations` method.
 
 ```php
 Spotify::recommendations($seed)->get();
 ```
 
 ### SpotifySeed API Reference
+**Note:** Any parameter that accepts multiple values can either receive a string with comma-separated values or an array of values.
 
 **Add artists, genres and tracks to your seed:**
 
