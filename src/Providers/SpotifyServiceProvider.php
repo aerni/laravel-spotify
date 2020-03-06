@@ -1,7 +1,10 @@
 <?php
 
-namespace Aerni\Spotify;
+namespace Aerni\Spotify\Providers;
 
+use Aerni\Spotify\Spotify;
+use Aerni\Spotify\SpotifyAuth;
+use Aerni\Spotify\SpotifyRequest;
 use Illuminate\Support\ServiceProvider;
 
 class SpotifyServiceProvider extends ServiceProvider
@@ -34,10 +37,10 @@ class SpotifyServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/spotify.php', 'spotify');
+        $this->mergeConfigFrom(__DIR__ . '/../../config/spotify.php', 'spotify');
 
         $this->publishes([
-            __DIR__.'/../config/spotify.php' => config_path('spotify.php'),
+            __DIR__ . '/../../config/spotify.php' => config_path('spotify.php'),
         ]);
     }
 }

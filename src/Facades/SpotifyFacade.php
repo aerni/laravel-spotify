@@ -1,7 +1,8 @@
 <?php
 
-namespace Aerni\Spotify;
+namespace Aerni\Spotify\Facades;
 
+use Aerni\Spotify\Spotify;
 use Illuminate\Support\Facades\Facade;
 
 class SpotifyFacade extends Facade
