@@ -6,6 +6,7 @@ php:
 
 env:
   matrix:
+    - COMPOSER_FLAGS="--prefer-lowest --prefer-stable"
     - COMPOSER_FLAGS=""
 
 before_script:
