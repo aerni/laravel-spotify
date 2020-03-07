@@ -305,7 +305,7 @@ Spotify::audioFeaturesForTracks('track_id, track_id_2, track_id_3')->get();
 You can get personalized tracks using the [recommendations endpoint](https://developer.spotify.com/documentation/web-api/reference/browse/get-recommendations) by seeding artists, genres and tracks along with a bunch of adjustable properties such as energy, key and danceability.
 
 ### Usage Example
-Import the `SpotifySeed` class.
+Import the `SpotifySeed` class. All of the following examples use the [Facade](https://laravel.com/docs/master/facades).
 
 ```php
 use SpotifySeed;
@@ -314,14 +314,13 @@ use SpotifySeed;
 Build your personalized `$seed`. You may chain as many methods as you want.
 
 ```php
-$seed = (new SpotifySeed)
-    ->setGenres(['gospel', 'pop', 'funk'])
+$seed = SpotifySeed::setGenres(['gospel', 'pop', 'funk'])
     ->setTargetValence(1.00)
     ->setSpeechiness(0.3, 0.9)
     ->setLiveness(0.3, 1.0);
 ```
 
-Get your personalized tracks by passing the `$seed` to the `recommendations` method.
+Get your personalized tracks by passing the `$seed` to the `recommendations()` method.
 
 ```php
 Spotify::recommendations($seed)->get();
@@ -334,77 +333,77 @@ Spotify::recommendations($seed)->get();
 
 ```php
 // Add an artist by ID.
-$seed->addArtist('artist_id');
+SpotifySeed::addArtist('artist_id');
 
 // Add several artists by IDs. Provide a string or array of IDs.
-$seed->addArtists('artist_id_1, artist_id_2, artist_id_3');
+SpotifySeed::addArtists('artist_id_1, artist_id_2, artist_id_3');
 
 // Set artists by IDs. Provide a string or array of IDs. This overwrites previously added artists.
-$seed->setArtists('artist_id_1, artist_id_2, artist_id_3');
+SpotifySeed::setArtists('artist_id_1, artist_id_2, artist_id_3');
 
 // Add a genre by ID.
-$seed->addGerne('gerne_id');
+SpotifySeed::addGerne('gerne_id');
 
 // Add several genres by IDs. Provide a string or array of IDs.
-$seed->addGenres('gerne_id_1, gerne_id_2, gerne_id_3');
+SpotifySeed::addGenres('gerne_id_1, gerne_id_2, gerne_id_3');
 
 // Set gernes by IDs. Provide a string or array of IDs. This overwrites previously added genres. 
-$seed->setGenres('genre_id_1, genre_id_2, genre_id_3');
+SpotifySeed::setGenres('genre_id_1, genre_id_2, genre_id_3');
 
 // Add a track by ID.
-$seed->addTrack('track_id');
+SpotifySeed::addTrack('track_id');
 
 // Add several tracks by IDs. Provide a string or array of IDs.
-$seed->addTracks('track_id_1, track_id_2, track_id_3');
+SpotifySeed::addTracks('track_id_1, track_id_2, track_id_3');
 
 // Set tracks by IDs. Provide a string or array of IDs. This overwrites previously added tracks.
-$seed->setTracks('track_id_1, track_id_2, track_id_3');
+SpotifySeed::setTracks('track_id_1, track_id_2, track_id_3');
 ```
 
 **Add tunable properties to your seed:**
 
 ```php
-$seed->setAcousticness(float $min, float $max);
-$seed->setTargetAcousticness(float $target);
+SpotifySeed::setAcousticness(float $min, float $max);
+SpotifySeed::setTargetAcousticness(float $target);
 
-$seed->setDanceability(float $min, float $max);
-$seed->setTargetDanceability(float $target);
+SpotifySeed::setDanceability(float $min, float $max);
+SpotifySeed::setTargetDanceability(float $target);
 
-$seed->setDuration(int $min, int $max);
-$seed->setTargetDuration(int $target);
+SpotifySeed::setDuration(int $min, int $max);
+SpotifySeed::setTargetDuration(int $target);
 
-$seed->setEnergy(float $min, float $max);
-$seed->setTargetEnergy(float $target);
+SpotifySeed::setEnergy(float $min, float $max);
+SpotifySeed::setTargetEnergy(float $target);
 
-$seed->setInstrumentalness(float $min, float $max);
-$seed->setTargetInstrumentalness(float $target);
+SpotifySeed::setInstrumentalness(float $min, float $max);
+SpotifySeed::setTargetInstrumentalness(float $target);
 
-$seed->setKey(int $min, int $max);
-$seed->setTargetKey(int $target);
+SpotifySeed::setKey(int $min, int $max);
+SpotifySeed::setTargetKey(int $target);
 
-$seed->setLiveness(float $min, float $max);
-$seed->setTargetLiveness(float $target);
+SpotifySeed::setLiveness(float $min, float $max);
+SpotifySeed::setTargetLiveness(float $target);
 
-$seed->setLoudness(float $min, float $max);
-$seed->setTargetLoudness(float $target);
+SpotifySeed::setLoudness(float $min, float $max);
+SpotifySeed::setTargetLoudness(float $target);
 
-$seed->setMode(int $min, int $max);
-$seed->setTargetMode(int $target);
+SpotifySeed::setMode(int $min, int $max);
+SpotifySeed::setTargetMode(int $target);
 
-$seed->setPopularity(float $min, float $max);
-$seed->setTargetPopularity(float $target);
+SpotifySeed::setPopularity(float $min, float $max);
+SpotifySeed::setTargetPopularity(float $target);
 
-$seed->setSpeechiness(float $min, float $max);
-$seed->setTargetSpeechiness(float $target);
+SpotifySeed::setSpeechiness(float $min, float $max);
+SpotifySeed::setTargetSpeechiness(float $target);
 
-$seed->setTempo(int $min, int $max);
-$seed->setTargetTempo(int $target);
+SpotifySeed::setTempo(int $min, int $max);
+SpotifySeed::setTargetTempo(int $target);
 
-$seed->setTimeSignature(int $min, int $max);
-$seed->setTargetTimeSignature(int $target);
+SpotifySeed::setTimeSignature(int $min, int $max);
+SpotifySeed::setTargetTimeSignature(int $target);
 
-$seed->setValence(float $min, float $max);
-$seed->setTargetValence(float $target);
+SpotifySeed::setValence(float $min, float $max);
+SpotifySeed::setTargetValence(float $target);
 ```
 
 ## Tests

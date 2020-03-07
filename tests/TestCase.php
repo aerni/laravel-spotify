@@ -41,6 +41,7 @@ abstract class TestCase extends Orchestra
         return [
             'SpotifyClient' => 'Aerni\Spotify\Facades\SpotifyClientFacade',
             'Spotify' => 'Aerni\Spotify\Facades\\SpotifyFacade',
+            'SpotifySeed' => 'Aerni\Spotify\Facades\\SpotifySeedFacade',
         ];
     }
 }
