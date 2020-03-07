@@ -305,7 +305,7 @@ Spotify::audioFeaturesForTracks('track_id, track_id_2, track_id_3')->get();
 You can get personalized tracks using the [recommendations endpoint](https://developer.spotify.com/documentation/web-api/reference/browse/get-recommendations) by seeding artists, genres and tracks along with a bunch of adjustable properties such as energy, key and danceability.
 
 ### Usage Example
-Import the `SpotifySeed` class.
+Import the `SpotifySeed` class. All of the following examples use the [Facade](https://laravel.com/docs/master/facades).
 
 ```php
 use SpotifySeed;
