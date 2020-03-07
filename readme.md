@@ -320,7 +320,7 @@ $seed = SpotifySeed::setGenres(['gospel', 'pop', 'funk'])
     ->setLiveness(0.3, 1.0);
 ```
 
-Get your personalized tracks by passing the `$seed` to the `recommendations` method.
+Get your personalized tracks by passing the `$seed` to the `recommendations()` method.
 
 ```php
 Spotify::recommendations($seed)->get();
