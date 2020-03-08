@@ -2,8 +2,6 @@
 
 namespace Aerni\Spotify;
 
-use Exception;
-
 class PendingRequest
 {
     public $endpoint;
@@ -23,7 +21,7 @@ class PendingRequest
      *
      * @param string $country
      * @return $this
-     * @throws Exception
+     * @throws Exceptions\ValidatorException
      */
     public function country(string $country = null): self
     {
@@ -37,7 +35,7 @@ class PendingRequest
      *
      * @param string $fields
      * @return $this
-     * @throws Exception
+     * @throws Exceptions\ValidatorException
      */
     public function fields(string $fields): self
     {
@@ -51,7 +49,7 @@ class PendingRequest
      *
      * @param string $value
      * @return $this
-     * @throws Exception
+     * @throws Exceptions\ValidatorException
      */
     public function includeExternal(string $value): self
     {
@@ -65,7 +63,7 @@ class PendingRequest
      *
      * @param string $value
      * @return $this
-     * @throws Exception
+     * @throws Exceptions\ValidatorException
      */
     public function includeGroups(string $value): self
     {
@@ -79,7 +77,7 @@ class PendingRequest
      *
      * @param int $limit
      * @return $this
-     * @throws Exception
+     * @throws Exceptions\ValidatorException
      */
     public function limit(int $limit): self
     {
@@ -93,7 +91,7 @@ class PendingRequest
      *
      * @param int $offset
      * @return $this
-     * @throws Exception
+     * @throws Exceptions\ValidatorException
      */
     public function offset(int $offset): self
     {
@@ -107,7 +105,7 @@ class PendingRequest
      *
      * @param string|null $market
      * @return $this
-     * @throws Exception
+     * @throws Exceptions\ValidatorException
      */
     public function market(string $market = null): self
     {
@@ -121,7 +119,7 @@ class PendingRequest
      *
      * @param string|null $locale
      * @return $this
-     * @throws Exception
+     * @throws Exceptions\ValidatorException
      */
     public function locale(string $locale = null): self
     {
@@ -135,7 +133,7 @@ class PendingRequest
      *
      * @param string $timestamp
      * @return $this
-     * @throws Exception
+     * @throws Exceptions\ValidatorException
      */
     public function timestamp(string $timestamp): self
     {
@@ -147,45 +145,15 @@ class PendingRequest
     /**
      * Add the requested parameters to an array.
      *
-     * @param string $key
+     * @param string $requestedParam
      * @param int|string|null $value
-     * @throws Exception
+     * @throws Exceptions\ValidatorException
      */
-    private function setRequestedParam(string $key, $value): void
+    private function setRequestedParam(string $requestedParam, $value): void
     {
-        $this->validateRequestedParam($key);
+        Validator::validateRequestedParam($requestedParam, $this->acceptedParams);
 
-        $value = $this->normalizeArgument($value);
-
-        $this->requestedParams[$key] = $value;
-    }
-
-    /**
-     * Validate if the requested parameters are accepted.
-     *
-     * @param string $key
-     * @throws Exception
-     */
-    private function validateRequestedParam(string $key): void
-    {
-        if (! array_key_exists($key, $this->acceptedParams)) {
-            throw new Exception("The parameter [{$key}] is not accepted for this API call.");
-        }
-    }
-
-    /**
-     * Normalize the arguments.
-     *
-     * @param $param
-     * @return string
-     */
-    private function normalizeArgument($param)
-    {
-        if (is_string($param)) {
-            $param = str_replace(' ', '', $param);
-        }
-
-        return $param;
+        $this->requestedParams[$requestedParam] = $value;
     }
 
     /**

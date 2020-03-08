@@ -17,27 +17,28 @@ class Validator
     public static function validateArgument(string $key, $argument): string
     {
         if (self::argumentIsValid($argument)) {
-            return self::normalizeArgument($argument);
+            return Normalizer::normalizeArgument($argument);
         } else {
             throw new ValidatorException("Please provide a string with comma-separated values or an array as the argument to the [{$key}] parameter.");
         }
     }
 
     /**
-     * Normalize the provided argument.
+     * Validate the requested parameter. Throw an error if the parameter is not accepted.
      *
-     * @param $argument
+     * @param string $requestedParam
+     * @param $acceptedParams
      * @return string
+     * @throws ValidatorException
      */
-    private static function normalizeArgument($argument): string
+    public static function validateRequestedParam(string $requestedParam, $acceptedParams): string
     {
-        if (is_array($argument)) {
-            $argument = collect($argument)->implode(',');
-        } elseif (is_string($argument)) {
-            $argument = str_replace(' ', '', $argument);
+        if (self::requestedParamIsAccepted($requestedParam, $acceptedParams)) {
+            return Normalizer::normalizeArgument($requestedParam);
+        } else {
+            $acceptedParams = collect($acceptedParams)->keys()->implode(', ');
+            throw new ValidatorException("The parameter [{$requestedParam}] can’t be used with this endpoint. Accepted parameters: [{$acceptedParams}].");
         }
-
-        return $argument;
     }
 
     /**
@@ -48,11 +49,11 @@ class Validator
      */
     private static function argumentIsValid($argument): bool
     {
-        if (! empty($argument) && is_array($argument)) {
+        if (!empty($argument) && is_array($argument)) {
             return true;
         }
 
-        if (! empty($argument) && is_string($argument)) {
+        if (!empty($argument) && is_string($argument)) {
             return true;
         }
 
@@ -60,13 +61,18 @@ class Validator
     }
 
     /**
-     * Convert an empty string to null.
+     * Check if the provided parameters is valid.
      *
-     * @param $value
-     * @return string|null
+     * @param $requestedParam
+     * @param $acceptedParams
+     * @return bool
      */
-    public static function emptyStringToNull(string $value)
+    private static function requestedParamIsAccepted($requestedParam, $acceptedParams): bool
     {
-        return is_string($value) && $value === '' ? null : $value;
+        if (array_key_exists($requestedParam, $acceptedParams)) {
+            return true;
+        }
+
+        return false;
     }
 }
