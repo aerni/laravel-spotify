@@ -469,6 +469,60 @@ class Spotify
     }
 
     /**
+     * Get Spotify catalog information for a single show identified by its unique Spotify ID.
+     *
+     * @param string $id
+     * @return PendingRequest
+     */
+    public function show(string $id): PendingRequest
+    {
+        $endpoint = '/shows/' . $id;
+
+        $acceptedParams = [
+            'market' => $this->defaultConfig['market'],
+        ];
+
+        return new PendingRequest($endpoint, $acceptedParams);
+    }
+
+    /**
+     * Get Spotify catalog information for several shows based on their Spotify IDs.
+     *
+     * @param array|string $ids
+     * @return PendingRequest
+     */
+    public function shows($ids): PendingRequest
+    {
+        $endpoint = '/shows/';
+
+        $acceptedParams = [
+            'ids' => Validator::validateArgument('ids', $ids),
+            'market' => $this->defaultConfig['market'],
+        ];
+
+        return new PendingRequest($endpoint, $acceptedParams);
+    }
+
+    /**
+     * Get Spotify catalog information about a show’s episodes.
+     *
+     * @param string $id
+     * @return PendingRequest
+     */
+    public function showEpisodes(string $id): PendingRequest
+    {
+        $endpoint = '/shows/' . $id . '/episodes/';
+
+        $acceptedParams = [
+            'limit' => null,
+            'offset' => null,
+            'market' => $this->defaultConfig['market'],
+        ];
+
+        return new PendingRequest($endpoint, $acceptedParams);
+    }
+
+    /**
      * Get a detailed audio analysis for a single track identified by its unique Spotify ID.
      *
      * @param string $id
