@@ -54,7 +54,7 @@ class PendingRequestTest extends TestCase
         $pendingRequest = new PendingRequest('endpoint', $acceptedParams);
 
         $this->expectException(Exception::class);
-        $this->expectExceptionMessage('The parameter [limit] is not accepted for this API call.');
+        $this->expectExceptionMessage('The parameter [limit] can’t be used with this endpoint. Accepted parameters: [country].');
 
         $pendingRequest->limit(10);
     }
