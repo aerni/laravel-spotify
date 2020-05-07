@@ -49,11 +49,11 @@ class Validator
      */
     private static function argumentIsValid($argument): bool
     {
-        if (!empty($argument) && is_array($argument)) {
+        if (! empty($argument) && is_array($argument)) {
             return true;
         }
 
-        if (!empty($argument) && is_string($argument)) {
+        if (! empty($argument) && is_string($argument)) {
             return true;
         }
 
