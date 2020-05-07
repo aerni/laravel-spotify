@@ -204,6 +204,41 @@ class Spotify
     }
 
     /**
+     * Get Spotify catalog information for a single episode identified by its unique Spotify ID.
+     *
+     * @param string $id
+     * @return PendingRequest
+     */
+    public function episode(string $id): PendingRequest
+    {
+        $endpoint = '/episodes/' . $id;
+
+        $acceptedParams = [
+            'market' => $this->defaultConfig['market'],
+        ];
+
+        return new PendingRequest($endpoint, $acceptedParams);
+    }
+
+    /**
+     * Get Spotify catalog information for several episodes based on their Spotify IDs.
+     *
+     * @param array|string $ids
+     * @return PendingRequest
+     */
+    public function episodes($ids): PendingRequest
+    {
+        $endpoint = '/episodes/';
+
+        $acceptedParams = [
+            'ids' => Validator::validateArgument('ids', $ids),
+            'market' => $this->defaultConfig['market'],
+        ];
+
+        return new PendingRequest($endpoint, $acceptedParams);
+    }
+
+    /**
      * Get a list of Spotify featured playlists (shown, for example, on a Spotify player’s ‘Browse’ tab).
      *
      * @return PendingRequest
