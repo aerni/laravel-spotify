@@ -247,6 +247,17 @@ Spotify::availableGenreSeeds()->get();
 Spotify::recommendations($seed)->get();
 ```
 
+### Episodes
+[Spotify Web API Reference on Episodes](https://developer.spotify.com/documentation/web-api/reference/episodes/)
+
+```php
+// Get an episode by ID.
+Spotify::episode('episode_id')->get();
+
+// Get several episodes by IDs. Provide a string or array of IDs.
+Spotify::episodes('episode_id, episode_id_2, episode_id_3')->get();
+```
+
 ### Playlists
 [Spotify Web API Reference on Playlists](https://developer.spotify.com/documentation/web-api/reference/playlists/)
 
@@ -279,6 +290,20 @@ Spotify::searchPlaylists('query')->get();
 
 // Search tracks by query.
 Spotify::searchTracks('query')->get();
+```
+
+### Shows
+[Spotify Web API Reference on Shows](https://developer.spotify.com/documentation/web-api/reference/shows/)
+
+```php
+// Get a show by ID.
+Spotify::show('show_id')->get();
+
+// Get several shows by IDs. Provide a string or array of IDs.
+Spotify::shows('show_id, show_id_2, show_id_3')->get();
+
+// Get the episodes of a show by ID.
+Spotify::showEpisodes('show_id')->get();
 ```
 
 ### Tracks
