@@ -425,6 +425,28 @@ class Spotify
     }
 
     /**
+     * Get Spotify Catalog information about episodes that match a keyword string.
+     *
+     * @param string $query
+     * @return PendingRequest
+     */
+    public function searchEpisodes(string $query): PendingRequest
+    {
+        $endpoint = '/search/';
+
+        $acceptedParams = [
+            'q' => $query,
+            'type' => 'episode',
+            'market' => $this->defaultConfig['market'],
+            'limit' => null,
+            'offset' => null,
+            'include_external' => null,
+        ];
+
+        return new PendingRequest($endpoint, $acceptedParams);
+    }
+
+    /**
      * Get Spotify Catalog information about playlists that match a keyword string.
      *
      * @param string $query
@@ -437,6 +459,28 @@ class Spotify
         $acceptedParams = [
             'q' => $query,
             'type' => 'playlist',
+            'market' => $this->defaultConfig['market'],
+            'limit' => null,
+            'offset' => null,
+            'include_external' => null,
+        ];
+
+        return new PendingRequest($endpoint, $acceptedParams);
+    }
+
+    /**
+     * Get Spotify Catalog information about shows that match a keyword string.
+     *
+     * @param string $query
+     * @return PendingRequest
+     */
+    public function searchShows(string $query): PendingRequest
+    {
+        $endpoint = '/search/';
+
+        $acceptedParams = [
+            'q' => $query,
+            'type' => 'show',
             'market' => $this->defaultConfig['market'],
             'limit' => null,
             'offset' => null,

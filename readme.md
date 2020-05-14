@@ -285,8 +285,14 @@ Spotify::searchAlbums('query')->get();
 // Search artists by query.
 Spotify::searchArtists('query')->get();
 
+// Search episodes by query.
+Spotify::searchEpisodes('query')->get();
+
 // Search playlists by query.
 Spotify::searchPlaylists('query')->get();
+
+// Search shows by query.
+Spotify::searchShows('query')->get();
 
 // Search tracks by query.
 Spotify::searchTracks('query')->get();

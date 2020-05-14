@@ -65,6 +65,18 @@ class SearchTest extends TestCase
         $this->assertEquals(20, $artists['artists']['offset']);
     }
 
+    public function test_can_search_for_episodes(): void
+    {
+        $query = 'Worship';
+
+        $episodes = Spotify::searchEpisodes($query)->limit(10)->offset(20)->get();
+        $episodeName = $episodes['episodes']['items'][0]['name'];
+
+        $this->assertStringContainsStringIgnoringCase($query, $episodeName);
+        $this->assertCount(10, $episodes['episodes']['items']);
+        $this->assertEquals(20, $episodes['episodes']['offset']);
+    }
+
     public function test_can_search_for_playlists(): void
     {
         $query = 'Worship';
@@ -75,6 +87,18 @@ class SearchTest extends TestCase
         $this->assertStringContainsStringIgnoringCase($query, $playlistName);
         $this->assertCount(20, $playlists['playlists']['items']);
         $this->assertEquals(5, $playlists['playlists']['offset']);
+    }
+
+    public function test_can_search_for_shows(): void
+    {
+        $query = 'Worship';
+
+        $shows = Spotify::searchShows($query)->limit(10)->offset(20)->get();
+        $showName = $shows['shows']['items'][0]['name'];
+
+        $this->assertStringContainsStringIgnoringCase($query, $showName);
+        $this->assertCount(10, $shows['shows']['items']);
+        $this->assertEquals(20, $shows['shows']['offset']);
     }
 
     public function test_can_search_for_tracks(): void
