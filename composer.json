@@ -33,7 +33,7 @@
 	],
 	"require": {
 		"php": "7.2.* || 7.3.* || 7.4.*",
-		"guzzlehttp/guzzle": "^6.5",
+		"guzzlehttp/guzzle": "^6.5 || ^7.0",
 		"illuminate/support": "^6.0 || ^7.0"
 	},
 	"require-dev": {
