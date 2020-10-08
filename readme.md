@@ -77,14 +77,15 @@ return [
     | Default Config
     |--------------------------------------------------------------------------
     |
-    | You may provide a default config which will be used for every API request.
+    | You may define a default country, locale and market that will be used
+    | for your Spotify API requests.
     |
     */
 
     'default_config' => [
-        'country' => env('SPOTIFY_DEFAULT_COUNTRY', ''),
-        'locale' => env('SPOTIFY_DEFAULT_LOCALE', ''),
-        'market' => env('SPOTIFY_DEFAULT_MARKET', ''),
+        'country' => null,
+        'locale' => null,
+        'market' => null,
     ],
 
 ];
@@ -95,14 +96,6 @@ Set the `Client ID` and `Client Secret` of your [Spotify App](https://developer.
 ```env
 SPOTIFY_CLIENT_ID=********************************
 SPOTIFY_CLIENT_SECRET=********************************
-```
-
-Optionally, you may also specify default values for the `country`, `locale` and `market` parameter. The defaults will be passed to every endpoint that supports the corresponding parameter.
-
-```env
-SPOTIFY_DEFAULT_COUNTRY=US
-SPOTIFY_DEFAULT_LOCALE=en_US
-SPOTIFY_DEFAULT_MARKET=US
 ```
 
 ## Usage Example
@@ -378,7 +371,7 @@ SpotifySeed::addGerne('gerne_id');
 // Add several genres by IDs. Provide a string or array of IDs.
 SpotifySeed::addGenres('gerne_id_1, gerne_id_2, gerne_id_3');
 
-// Set gernes by IDs. Provide a string or array of IDs. This overwrites previously added genres. 
+// Set gernes by IDs. Provide a string or array of IDs. This overwrites previously added genres.
 SpotifySeed::setGenres('genre_id_1, genre_id_2, genre_id_3');
 
 // Add a track by ID.

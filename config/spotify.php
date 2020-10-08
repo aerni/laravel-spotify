@@ -21,14 +21,15 @@ return [
     | Default Config
     |--------------------------------------------------------------------------
     |
-    | You may provide a default config which will be used for every API request.
+    | You may define a default country, locale and market that will be used
+    | for your Spotify API requests.
     |
     */
 
     'default_config' => [
-        'country' => env('SPOTIFY_DEFAULT_COUNTRY', ''),
-        'locale' => env('SPOTIFY_DEFAULT_LOCALE', ''),
-        'market' => env('SPOTIFY_DEFAULT_MARKET', ''),
+        'country' => null,
+        'locale' => null,
+        'market' => null,
     ],
 
 ];

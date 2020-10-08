@@ -16,6 +16,12 @@ abstract class TestCase extends Orchestra
 
         // Set the config with the provided .env variables
         $app['config']->set('spotify', require(__DIR__ . '/../config/spotify.php'));
+
+        $app['config']->set('spotify.default_config', [
+            'country' => 'US',
+            'locale' => 'en_US',
+            'market' => 'US',
+        ]);
     }
 
     protected function getPackageProviders($app): array

@@ -20,15 +20,4 @@ class Normalizer
 
         return $argument;
     }
-
-    /**
-     * Convert an empty string to null.
-     *
-     * @param $value
-     * @return string|null
-     */
-    public static function emptyStringToNull(string $value)
-    {
-        return is_string($value) && $value === '' ? null : $value;
-    }
 }

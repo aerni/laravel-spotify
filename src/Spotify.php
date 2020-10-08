@@ -4,13 +4,11 @@ namespace Aerni\Spotify;
 
 class Spotify
 {
-    private $defaultConfig;
+    protected $defaultConfig;
 
     public function __construct(array $defaultConfig)
     {
-        foreach ($defaultConfig as $key => $value) {
-            $this->defaultConfig[$key] = Normalizer::emptyStringToNull($value);
-        }
+        $this->defaultConfig = $defaultConfig;
     }
 
     /**
