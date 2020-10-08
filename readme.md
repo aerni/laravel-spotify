@@ -12,12 +12,6 @@
     <a href="https://packagist.org/packages/aerni/laravel-spotify">
         <img src="https://flat.badgen.net/packagist/dt/aerni/laravel-spotify" alt="Packagist total downloads">
     </a>
-    <a href="https://travis-ci.com/aerni/laravel-spotify">
-        <img src="https://flat.badgen.net/travis/aerni/laravel-spotify" alt="Travis CI build">
-    </a>
-    <a href="https://github.styleci.io/repos/244674855">
-        <img src="https://github.styleci.io/repos/244674855/shield?branch=master" alt="StyleCI build">
-    </a>
     <a href="https://github.com/aerni/laravel-spotify/blob/master/LICENSE">
         <img src="https://flat.badgen.net/github/license/aerni/laravel-spotify" alt="GitHub license">
     </a>
