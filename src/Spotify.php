@@ -643,7 +643,7 @@ class Spotify
     }
 
     /**
-     * Get Spotify catalog information for a single user.
+     * Get public profile information about a Spotify user.
      *
      * @param string $id
      * @return PendingRequest
@@ -652,13 +652,11 @@ class Spotify
     {
         $endpoint = '/users/'.$id;
 
-        $acceptedParams = [];
-
-        return new PendingRequest($endpoint, $acceptedParams);
+        return new PendingRequest($endpoint);
     }
 
     /**
-     * Get public playlists of a Spotify user.
+     * Get a list of the playlists owned or followed by a Spotify user.
      *
      * @param string $id
      * @return PendingRequest
