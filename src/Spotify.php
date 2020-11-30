@@ -641,4 +641,35 @@ class Spotify
 
         return new PendingRequest($endpoint, $acceptedParams);
     }
+
+    /**
+     * Get public profile information about a Spotify user.
+     *
+     * @param string $id
+     * @return PendingRequest
+     */
+    public function user(string $id): PendingRequest
+    {
+        $endpoint = '/users/'.$id;
+
+        return new PendingRequest($endpoint);
+    }
+
+    /**
+     * Get a list of the playlists owned or followed by a Spotify user.
+     *
+     * @param string $id
+     * @return PendingRequest
+     */
+    public function userPlaylists(string $id): PendingRequest
+    {
+        $endpoint = '/users/'.$id.'/playlists';
+
+        $acceptedParams = [
+            'limit' => null,
+            'offset' => null,
+        ];
+
+        return new PendingRequest($endpoint, $acceptedParams);
+    }
 }
