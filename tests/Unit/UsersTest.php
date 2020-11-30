@@ -8,7 +8,7 @@ class UsersTest extends TestCase
 {
     private $userId = '21drtyolp7mfwvb2fpoexyaqq';
 
-    public function test_can_get_an_user(): void
+    public function test_can_get_a_user(): void
     {
         $user = Spotify::user($this->userId)->get();
 
