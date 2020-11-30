@@ -319,6 +319,17 @@ Spotify::audioFeaturesForTrack('track_id')->get();
 Spotify::audioFeaturesForTracks('track_id, track_id_2, track_id_3')->get();
 ```
 
+### User's Profile
+[Spotify Web API Reference on User's Profile](https://developer.spotify.com/documentation/web-api/reference/users-profile/)
+
+```php
+// Get a user's profile
+Spotify::user('user_id')->get();
+
+// Get a list of a user's playlists
+Spotify::userPlaylists('user_id')->get();
+```
+
 ## Recommendations
 You can get personalized tracks using the [recommendations endpoint](https://developer.spotify.com/documentation/web-api/reference/browse/get-recommendations) by seeding artists, genres and tracks along with a bunch of adjustable properties such as energy, key and danceability.
 
