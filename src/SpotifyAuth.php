@@ -46,7 +46,7 @@ class SpotifyAuth
         } catch (RequestException $e) {
             $errorResponse = json_decode($e->getResponse()->getBody()->getContents());
             $status = $e->getCode();
-            $message = $errorResponse->error_description;
+            $message = $errorResponse->error;
 
             throw new SpotifyAuthException($message, $status, $errorResponse);
         }
