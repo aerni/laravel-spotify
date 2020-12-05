@@ -15,7 +15,7 @@ class SpotifyExceptionTest extends TestCase
         $auth = new SpotifyAuth('123', '123');
 
         $this->expectException(SpotifyAuthException::class);
-        $this->expectExceptionMessage('Invalid client');
+        $this->expectExceptionMessage('invalid_client');
 
         $auth->getAccessToken();
     }
