@@ -4,11 +4,11 @@ on: [push]
 
 jobs:
   style:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Fix style
         uses: docker://oskarstark/php-cs-fixer-ga
@@ -21,7 +21,7 @@ jobs:
         id: extract_branch
 
       - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v2.3.0
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
             commit_message: Fix styling
             branch: ${{ steps.extract_branch.outputs.branch }}
