@@ -2,10 +2,10 @@
 
 namespace Aerni\Spotify;
 
-use Aerni\Spotify\Exceptions\SpotifyAuthException;
-use GuzzleHttp\Exception\RequestException;
-use Illuminate\Support\Carbon;
 use SpotifyClient;
+use Illuminate\Support\Facades\Cache;
+use GuzzleHttp\Exception\RequestException;
+use Aerni\Spotify\Exceptions\SpotifyAuthException;
 
 class SpotifyAuth
 {
@@ -13,11 +13,6 @@ class SpotifyAuth
 
     private $clientId;
     private $clientSecret;
-
-    private $accessToken;
-    private $tokenType;
-    private $expirationDate;
-    private $scope;
 
     public function __construct($clientId, $clientSecret)
     {
@@ -53,10 +48,9 @@ class SpotifyAuth
 
         $body = json_decode((string) $response->getBody());
 
-        $this->accessToken = $body->access_token;
-        $this->tokenType = $body->token_type;
-        $this->expirationDate = Carbon::now()->addSeconds($body->expires_in);
-        $this->scope = $body->scope;
+        Cache::remember('spotifyAccessToken', $body->expires_in, function () use ($body) {
+            return $body->access_token;
+        });
     }
 
     /**
@@ -67,42 +61,10 @@ class SpotifyAuth
      */
     public function getAccessToken(): string
     {
-        if (! $this->accessTokenIsSet()) {
+        if (! Cache::has('spotifyAccessToken')) {
             $this->generateAccessToken();
         }
 
-        if ($this->accessTokenIsExpired()) {
-            $this->generateAccessToken();
-        }
-
-        return $this->accessToken;
-    }
-
-    /**
-     * Check if the access token is expired.
-     *
-     * @return bool
-     */
-    private function accessTokenIsExpired(): bool
-    {
-        if (isset($this->expirationDate) && $this->expirationDate->isPast()) {
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
-     * Check if the access token is set.
-     *
-     * @return bool
-     */
-    private function accessTokenIsSet(): bool
-    {
-        if (isset($this->accessToken)) {
-            return true;
-        }
-
-        return false;
+        return Cache::get('spotifyAccessToken');
     }
 }
