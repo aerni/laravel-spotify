@@ -1,17 +1,23 @@
-name: Tests
+name: Run Tests
 
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
-  php_tests:
-    runs-on: ${{ matrix.os }}
+  phpunit:
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-20.04]
-        php: [7.4, 8.0]
+        php: [8.1, 8.0]
+        laravel: [9.*, 8.*]
+        stability: [prefer-lowest, prefer-stable]
+        include:
+          - laravel: 9.*
+            testbench: 7.*
+          - laravel: 8.*
+            testbench: 6.*
 
-    name: PHP ${{ matrix.php }}
+    name: PHP ${{ matrix.php }} – Laravel ${{ matrix.laravel }} - ${{ matrix.stability }}
 
     steps:
       - name: Checkout code
@@ -26,11 +32,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer validate
-          composer install --no-interaction
+          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
+          composer update --${{ matrix.stability }} --prefer-dist --no-interaction
 
-      - name: Run PHPUnit
-        run: composer test
+      - name: Run tests
+        run: vendor/bin/phpunit
         env:
           SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
           SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
