@@ -81,12 +81,12 @@ class SearchTest extends TestCase
     {
         $query = 'Worship';
 
-        $playlists = Spotify::searchPlaylists($query)->limit(20)->offset(5)->get();
+        $playlists = Spotify::searchPlaylists($query)->limit(20)->offset(1)->get();
         $playlistName = $playlists['playlists']['items'][0]['name'];
 
         $this->assertStringContainsStringIgnoringCase($query, $playlistName);
         $this->assertCount(20, $playlists['playlists']['items']);
-        $this->assertEquals(5, $playlists['playlists']['offset']);
+        $this->assertEquals(1, $playlists['playlists']['offset']);
     }
 
     public function test_can_search_for_shows(): void
