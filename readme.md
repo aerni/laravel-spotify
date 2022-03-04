@@ -260,7 +260,7 @@ Spotify::playlistCoverImage('playlist_id')->get();
 ```
 
 ### Search
-[Spotify Web API Reference on Search](https://developer.spotify.com/documentation/web-api/reference/search/search/)
+[Spotify Web API Reference on Search](https://developer.spotify.com/documentation/web-api/reference/search/)
 
 ```php
 // Search items by query. Provide a string or array to the second parameter.
