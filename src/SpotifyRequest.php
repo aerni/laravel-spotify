@@ -36,9 +36,9 @@ class SpotifyRequest
                 ],
             ]);
         } catch (RequestException $e) {
-            $errorResponse = json_decode($e->getResponse()->getBody()->getContents());
-            $status = $errorResponse->error->status;
-            $message = $errorResponse->error->message;
+            $errorResponse = $e->getResponse();
+            $status = $errorResponse->getStatusCode();;
+            $message = $errorResponse->getReasonPhrase();
 
             throw new SpotifyApiException($message, $status, $errorResponse);
         }
