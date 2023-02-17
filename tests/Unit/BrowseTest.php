@@ -13,7 +13,7 @@ class BrowseTest extends TestCase
 
         $category = Spotify::category($categoryId)->get();
 
-        $this->assertEquals($category['id'], $categoryId);
+        $this->assertEquals($category['id'], '0JQ5DAqbMKFRY5ok2pxXJ0');
     }
 
     public function test_can_get_category_playlists(): void

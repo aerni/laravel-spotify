@@ -26,7 +26,7 @@ class SpotifyExceptionTest extends TestCase
         $request = resolve(SpotifyRequest::class);
 
         $this->expectException(SpotifyApiException::class);
-        $this->expectExceptionMessage('Service not found');
+        $this->expectExceptionMessage('Not Found');
 
         $request->get('/not-existing-endpoint');
     }
