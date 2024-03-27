@@ -6,9 +6,6 @@ class Normalizer
 {
     /**
      * Normalize the provided argument.
-     *
-     * @param $argument
-     * @return string
      */
     public static function normalizeArgument($argument): string
     {

@@ -15,7 +15,7 @@ abstract class TestCase extends Orchestra
         parent::getEnvironmentSetUp($app);
 
         // Set the config with the provided .env variables
-        $app['config']->set('spotify', require(__DIR__ . '/../config/spotify.php'));
+        $app['config']->set('spotify', require (__DIR__.'/../config/spotify.php'));
 
         $app['config']->set('spotify.default_config', [
             'country' => 'US',

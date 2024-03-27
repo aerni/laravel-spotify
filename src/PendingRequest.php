@@ -5,7 +5,9 @@ namespace Aerni\Spotify;
 class PendingRequest
 {
     public $endpoint;
+
     public $acceptedParams;
+
     public $responseArrayKey;
 
     public $requestedParams;
@@ -19,11 +21,11 @@ class PendingRequest
     /**
      * Set the country if provided.
      *
-     * @param string $country
      * @return $this
+     *
      * @throws Exceptions\ValidatorException
      */
-    public function country(string $country = null): self
+    public function country(?string $country = null): self
     {
         $this->setRequestedParam('country', $country);
 
@@ -33,8 +35,8 @@ class PendingRequest
     /**
      * Set the fields if provided.
      *
-     * @param string $fields
      * @return $this
+     *
      * @throws Exceptions\ValidatorException
      */
     public function fields(string $fields): self
@@ -47,8 +49,8 @@ class PendingRequest
     /**
      * Set include_external if provided.
      *
-     * @param string $value
      * @return $this
+     *
      * @throws Exceptions\ValidatorException
      */
     public function includeExternal(string $value): self
@@ -61,8 +63,8 @@ class PendingRequest
     /**
      * Set include_groups if provided.
      *
-     * @param string $value
      * @return $this
+     *
      * @throws Exceptions\ValidatorException
      */
     public function includeGroups(string $value): self
@@ -75,8 +77,8 @@ class PendingRequest
     /**
      * Set the limit if provided.
      *
-     * @param int $limit
      * @return $this
+     *
      * @throws Exceptions\ValidatorException
      */
     public function limit(int $limit): self
@@ -89,8 +91,8 @@ class PendingRequest
     /**
      * Set the offset if provided.
      *
-     * @param int $offset
      * @return $this
+     *
      * @throws Exceptions\ValidatorException
      */
     public function offset(int $offset): self
@@ -103,11 +105,11 @@ class PendingRequest
     /**
      * Set the market if provided.
      *
-     * @param string|null $market
      * @return $this
+     *
      * @throws Exceptions\ValidatorException
      */
-    public function market(string $market = null): self
+    public function market(?string $market = null): self
     {
         $this->setRequestedParam('market', $market);
 
@@ -117,11 +119,11 @@ class PendingRequest
     /**
      * Set the locale if provided.
      *
-     * @param string|null $locale
      * @return $this
+     *
      * @throws Exceptions\ValidatorException
      */
-    public function locale(string $locale = null): self
+    public function locale(?string $locale = null): self
     {
         $this->setRequestedParam('locale', $locale);
 
@@ -131,8 +133,8 @@ class PendingRequest
     /**
      * Set the timestamp if provided.
      *
-     * @param string $timestamp
      * @return $this
+     *
      * @throws Exceptions\ValidatorException
      */
     public function timestamp(string $timestamp): self
@@ -145,8 +147,8 @@ class PendingRequest
     /**
      * Add the requested parameters to an array.
      *
-     * @param string $requestedParam
-     * @param int|string|null $value
+     * @param  int|string|null  $value
+     *
      * @throws Exceptions\ValidatorException
      */
     private function setRequestedParam(string $requestedParam, $value): void
@@ -159,11 +161,9 @@ class PendingRequest
     /**
      * Execute the request. This is the final method and has to be called at the end of the method chain.
      *
-     * @param string|null $responseArrayKey
-     * @return array
      * @throws Exceptions\SpotifyApiException
      */
-    public function get(string $responseArrayKey = null): array
+    public function get(?string $responseArrayKey = null): array
     {
         $this->responseArrayKey = $responseArrayKey;
 
