@@ -7,6 +7,7 @@ use Spotify;
 class ArtistsTest extends TestCase
 {
     private $artistId = '3hyTRrdgrNuAExA3tNS8CA';
+
     private $artistIds = ['0ADKN6ZiuyyScOTXloddx9', '3hyTRrdgrNuAExA3tNS8CA', '2FNOMU2OOusxW671wZKbKt'];
 
     public function test_can_get_an_artist(): void

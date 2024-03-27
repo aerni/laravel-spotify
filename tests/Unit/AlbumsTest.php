@@ -7,6 +7,7 @@ use Spotify;
 class AlbumsTest extends TestCase
 {
     private $albumId = '1Dm5rDVBBeLLjqfzBkuadR';
+
     private $albumIds = ['1Dm5rDVBBeLLjqfzBkuadR', '5phxHbK2GSr7hEu4orLywP', '3WEwS5DLsagnqQtHP2oEEu'];
 
     public function test_can_get_an_album(): void

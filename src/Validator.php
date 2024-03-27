@@ -9,9 +9,6 @@ class Validator
     /**
      * Validate the provided argument. Throw an error if the argument is not valid.
      *
-     * @param string $key
-     * @param $argument
-     * @return string
      * @throws ValidatorException
      */
     public static function validateArgument(string $key, $argument): string
@@ -26,9 +23,6 @@ class Validator
     /**
      * Validate the requested parameter. Throw an error if the parameter is not accepted.
      *
-     * @param string $requestedParam
-     * @param $acceptedParams
-     * @return string
      * @throws ValidatorException
      */
     public static function validateRequestedParam(string $requestedParam, $acceptedParams): string
@@ -44,9 +38,6 @@ class Validator
 
     /**
      * Check if the provided argument is valid.
-     *
-     * @param $argument
-     * @return bool
      */
     private static function argumentIsValid($argument): bool
     {
@@ -63,10 +54,6 @@ class Validator
 
     /**
      * Check if the provided parameters is valid.
-     *
-     * @param $requestedParam
-     * @param $acceptedParams
-     * @return bool
      */
     private static function requestedParamIsAccepted($requestedParam, $acceptedParams): bool
     {

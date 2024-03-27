@@ -5,49 +5,65 @@ namespace Aerni\Spotify;
 class SpotifySeed
 {
     public $artists = [];
+
     public $genres = [];
+
     public $tracks = [];
 
     public $acousticnessRange = [];
+
     public $targetAcousticness;
 
     public $danceabilityRange = [];
+
     public $targetDanceability;
 
     public $durationRange = [];
+
     public $targetDuration;
 
     public $energyRange = [];
+
     public $targetEnergy;
 
     public $instrumentalnessRange = [];
+
     public $targetInstrumentalness;
 
     public $keyRange = [];
+
     public $targetKey;
 
     public $livenessRange = [];
+
     public $targetLiveness;
 
     public $loudnessRange = [];
+
     public $targetLoudness;
 
     public $modeRange = [];
+
     public $targetMode;
 
     public $popularityRange = [];
+
     public $targetPopularity;
 
     public $speechinessRange = [];
+
     public $targetSpeechiness;
 
     public $tempoRange = [];
+
     public $targetTempo;
 
     public $timeSignatureRange = [];
+
     public $targetTimeSignature;
 
     public $valenceRange = [];
+
     public $targetValence;
 
     /**
@@ -62,9 +78,6 @@ class SpotifySeed
 
     /**
      * Add an artist to the artists seeds.
-     *
-     * @param string $id
-     * @return SpotifySeed
      */
     public function addArtist(string $id): self
     {
@@ -78,8 +91,7 @@ class SpotifySeed
     /**
      * Add artists to the artists seeds.
      *
-     * @param array|string $ids
-     * @return SpotifySeed
+     * @param  array|string  $ids
      */
     public function addArtists($ids): self
     {
@@ -102,8 +114,7 @@ class SpotifySeed
     /**
      * Set artists as seed.
      *
-     * @param array|string $ids
-     * @return SpotifySeed
+     * @param  array|string  $ids
      */
     public function setArtists($ids): self
     {
@@ -121,9 +132,6 @@ class SpotifySeed
 
     /**
      * Add genre to the genres seeds.
-     *
-     * @param string $id
-     * @return SpotifySeed
      */
     public function addGenre(string $id): self
     {
@@ -137,8 +145,7 @@ class SpotifySeed
     /**
      * Add genres to the genres seeds.
      *
-     * @param array|string $ids
-     * @return SpotifySeed
+     * @param  array|string  $ids
      */
     public function addGenres($ids): self
     {
@@ -161,8 +168,7 @@ class SpotifySeed
     /**
      * Set genres as seed.
      *
-     * @param array|string $ids
-     * @return SpotifySeed
+     * @param  array|string  $ids
      */
     public function setGenres($ids): self
     {
@@ -180,9 +186,6 @@ class SpotifySeed
 
     /**
      * Add track to the tracks seeds.
-     *
-     * @param string $id
-     * @return SpotifySeed
      */
     public function addTrack(string $id): self
     {
@@ -196,8 +199,7 @@ class SpotifySeed
     /**
      * Add tracks to the tracks seeds.
      *
-     * @param array|string $ids
-     * @return SpotifySeed
+     * @param  array|string  $ids
      */
     public function addTracks($ids): self
     {
@@ -220,8 +222,7 @@ class SpotifySeed
     /**
      * Set tracks as seed.
      *
-     * @param array|string $ids
-     * @return SpotifySeed
+     * @param  array|string  $ids
      */
     public function setTracks($ids): self
     {
@@ -239,10 +240,6 @@ class SpotifySeed
 
     /**
      * Set acousticness range.
-     *
-     * @param float $min
-     * @param float $max
-     * @return SpotifySeed
      */
     public function setAcousticness(float $min, float $max): self
     {
@@ -253,9 +250,6 @@ class SpotifySeed
 
     /**
      * Set target acousticness.
-     *
-     * @param float $target
-     * @return SpotifySeed
      */
     public function setTargetAcousticness(float $target): self
     {
@@ -266,10 +260,6 @@ class SpotifySeed
 
     /**
      * Set danceability range.
-     *
-     * @param float $min
-     * @param float $max
-     * @return SpotifySeed
      */
     public function setDanceability(float $min, float $max): self
     {
@@ -280,9 +270,6 @@ class SpotifySeed
 
     /**
      * Set target danceability.
-     *
-     * @param float $target
-     * @return SpotifySeed
      */
     public function setTargetDanceability(float $target): self
     {
@@ -293,10 +280,6 @@ class SpotifySeed
 
     /**
      * Set duration range.
-     *
-     * @param int $min
-     * @param int $max
-     * @return SpotifySeed
      */
     public function setDuration(int $min, int $max): self
     {
@@ -307,9 +290,6 @@ class SpotifySeed
 
     /**
      * Set target duration.
-     *
-     * @param int $target
-     * @return SpotifySeed
      */
     public function setTargetDuration(int $target): self
     {
@@ -320,10 +300,6 @@ class SpotifySeed
 
     /**
      * Set energy range.
-     *
-     * @param float $min
-     * @param float $max
-     * @return SpotifySeed
      */
     public function setEnergy(float $min, float $max): self
     {
@@ -334,9 +310,6 @@ class SpotifySeed
 
     /**
      * Set target energy.
-     *
-     * @param float $target
-     * @return SpotifySeed
      */
     public function setTargetEnergy(float $target): self
     {
@@ -347,10 +320,6 @@ class SpotifySeed
 
     /**
      * Set instrumentalness range.
-     *
-     * @param float $min
-     * @param float $max
-     * @return SpotifySeed
      */
     public function setInstrumentalness(float $min, float $max): self
     {
@@ -361,9 +330,6 @@ class SpotifySeed
 
     /**
      * Set target instrumentalness.
-     *
-     * @param float $target
-     * @return SpotifySeed
      */
     public function setTargetInstrumentalness(float $target): self
     {
@@ -374,10 +340,6 @@ class SpotifySeed
 
     /**
      * Set key range.
-     *
-     * @param int $min
-     * @param int $max
-     * @return SpotifySeed
      */
     public function setKey(int $min, int $max): self
     {
@@ -388,9 +350,6 @@ class SpotifySeed
 
     /**
      * Set target key.
-     *
-     * @param int $target
-     * @return SpotifySeed
      */
     public function setTargetKey(int $target): self
     {
@@ -401,10 +360,6 @@ class SpotifySeed
 
     /**
      * Set liveness range.
-     *
-     * @param float $min
-     * @param float $max
-     * @return SpotifySeed
      */
     public function setLiveness(float $min, float $max): self
     {
@@ -415,9 +370,6 @@ class SpotifySeed
 
     /**
      * Set target liveness.
-     *
-     * @param float $target
-     * @return SpotifySeed
      */
     public function setTargetLiveness(float $target): self
     {
@@ -428,10 +380,6 @@ class SpotifySeed
 
     /**
      * Set loudness range.
-     *
-     * @param float $min
-     * @param float $max
-     * @return SpotifySeed
      */
     public function setLoudness(float $min, float $max): self
     {
@@ -442,9 +390,6 @@ class SpotifySeed
 
     /**
      * Set target loudness.
-     *
-     * @param float $target
-     * @return SpotifySeed
      */
     public function setTargetLoudness(float $target): self
     {
@@ -455,10 +400,6 @@ class SpotifySeed
 
     /**
      * Set mode range.
-     *
-     * @param int $min
-     * @param int $max
-     * @return SpotifySeed
      */
     public function setMode(int $min, int $max): self
     {
@@ -469,9 +410,6 @@ class SpotifySeed
 
     /**
      * Set target mode.
-     *
-     * @param int $target
-     * @return SpotifySeed
      */
     public function setTargetMode(int $target): self
     {
@@ -482,10 +420,6 @@ class SpotifySeed
 
     /**
      * Set popularity range.
-     *
-     * @param float $min
-     * @param float $max
-     * @return SpotifySeed
      */
     public function setPopularity(float $min, float $max): self
     {
@@ -496,9 +430,6 @@ class SpotifySeed
 
     /**
      * Set target popularity.
-     *
-     * @param float $target
-     * @return SpotifySeed
      */
     public function setTargetPopularity(float $target): self
     {
@@ -509,10 +440,6 @@ class SpotifySeed
 
     /**
      * Set speechiness range.
-     *
-     * @param float $min
-     * @param float $max
-     * @return SpotifySeed
      */
     public function setSpeechiness(float $min, float $max): self
     {
@@ -523,9 +450,6 @@ class SpotifySeed
 
     /**
      * Set target speechiness.
-     *
-     * @param float $target
-     * @return SpotifySeed
      */
     public function setTargetSpeechiness(float $target): self
     {
@@ -536,10 +460,6 @@ class SpotifySeed
 
     /**
      * Set tempo range.
-     *
-     * @param int $min
-     * @param int $max
-     * @return SpotifySeed
      */
     public function setTempo(int $min, int $max): self
     {
@@ -550,9 +470,6 @@ class SpotifySeed
 
     /**
      * Set target tempo.
-     *
-     * @param int $target
-     * @return SpotifySeed
      */
     public function setTargetTempo(int $target): self
     {
@@ -563,10 +480,6 @@ class SpotifySeed
 
     /**
      * Set time signature range.
-     *
-     * @param int $min
-     * @param int $max
-     * @return SpotifySeed
      */
     public function setTimeSignature(int $min, int $max): self
     {
@@ -577,9 +490,6 @@ class SpotifySeed
 
     /**
      * Set target time signature.
-     *
-     * @param int $target
-     * @return SpotifySeed
      */
     public function setTargetTimeSignature(int $target): self
     {
@@ -590,10 +500,6 @@ class SpotifySeed
 
     /**
      * Set valence range.
-     *
-     * @param float $min
-     * @param float $max
-     * @return SpotifySeed
      */
     public function setValence(float $min, float $max): self
     {
@@ -604,9 +510,6 @@ class SpotifySeed
 
     /**
      * Set target valence.
-     *
-     * @param float $target
-     * @return SpotifySeed
      */
     public function setTargetValence(float $target): self
     {
@@ -617,8 +520,6 @@ class SpotifySeed
 
     /**
      * Collect all the ranges in an array.
-     *
-     * @return array
      */
     private function getRangesArray(): array
     {
@@ -642,8 +543,6 @@ class SpotifySeed
 
     /**
      * Collect all the targets in an array.
-     *
-     * @return array
      */
     private function getTargetsArray(): array
     {
@@ -667,8 +566,6 @@ class SpotifySeed
 
     /**
      * Get the final array for the API request.
-     *
-     * @return array
      */
     public function getArrayForApi(): array
     {

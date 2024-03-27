@@ -7,6 +7,7 @@ use Spotify;
 class ShowsTest extends TestCase
 {
     private $showId = '38bS44xjbVVZ3No3ByF1dJ';
+
     private $showIds = ['38bS44xjbVVZ3No3ByF1dJ', '5CfCWKI5pZ28U0uOzXkDHe', '5as3aKmN2k11yfDDDSrvaZ'];
 
     public function test_can_get_several_shows(): void

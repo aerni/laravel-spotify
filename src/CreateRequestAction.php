@@ -10,8 +10,6 @@ class CreateRequestAction
     /**
      * Execute the pending request and return the response from the Spotify API.
      *
-     * @param PendingRequest $pendingRequest
-     * @return array
      * @throws SpotifyApiException
      */
     public function execute(PendingRequest $pendingRequest): array
@@ -34,10 +32,6 @@ class CreateRequestAction
 
     /**
      * This merges the requested and accepted parameters and outputs the final parameters ready for the API call.
-     *
-     * @param Collection $acceptedParams
-     * @param Collection $requestedParams
-     * @return array
      */
     private function createFinalParams(Collection $acceptedParams, Collection $requestedParams): array
     {
