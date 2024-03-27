@@ -7,6 +7,7 @@ use Spotify;
 class TracksTest extends TestCase
 {
     private $trackId = '35GACeX8Zl55jp29xFbvvo';
+
     private $trackIds = ['6RTOAaQeVkm1GUTqIY0hjp', '35GACeX8Zl55jp29xFbvvo', '5yNffCuv0YGOgRazVMfEP6'];
 
     public function test_can_get_audio_analysis_for_a_track(): void

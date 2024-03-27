@@ -6,9 +6,6 @@ class SpotifyPathGenerator
 {
     /**
      * Generate a URI format for an album.
-     *
-     * @param string $id
-     * @return string
      */
     public static function getAlbumUri(string $id): string
     {
@@ -17,9 +14,6 @@ class SpotifyPathGenerator
 
     /**
      * Generate a URI format for an artist.
-     *
-     * @param string $id
-     * @return string
      */
     public static function getArtistUri(string $id): string
     {
@@ -28,9 +22,6 @@ class SpotifyPathGenerator
 
     /**
      * Generate a URI format for a playlist.
-     *
-     * @param string $id
-     * @return string
      */
     public static function getPlaylistUri(string $id): string
     {
@@ -39,9 +30,6 @@ class SpotifyPathGenerator
 
     /**
      * Generate a URI format for a track.
-     *
-     * @param string $id
-     * @return string
      */
     public static function getTrackUri(string $id): string
     {
@@ -50,9 +38,6 @@ class SpotifyPathGenerator
 
     /**
      * Generate a URL for an album.
-     *
-     * @param string $id
-     * @return string
      */
     public static function getAlbumUrl(string $id): string
     {
@@ -61,9 +46,6 @@ class SpotifyPathGenerator
 
     /**
      * Generate a URL for an artist.
-     *
-     * @param string $id
-     * @return string
      */
     public static function getArtistUrl(string $id): string
     {
@@ -72,9 +54,6 @@ class SpotifyPathGenerator
 
     /**
      * Generate a URL for a playlist.
-     *
-     * @param string $id
-     * @return string
      */
     public static function getPlaylistUrl(string $id): string
     {
@@ -83,9 +62,6 @@ class SpotifyPathGenerator
 
     /**
      * Generate a URL for a track.
-     *
-     * @param string $id
-     * @return string
      */
     public static function getTrackUrl(string $id): string
     {

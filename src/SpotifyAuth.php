@@ -12,6 +12,7 @@ class SpotifyAuth
     private const SPOTIFY_API_TOKEN_URL = 'https://accounts.spotify.com/api/token';
 
     private $clientId;
+
     private $clientSecret;
 
     public function __construct($clientId, $clientSecret)
@@ -56,7 +57,6 @@ class SpotifyAuth
     /**
      * Get the access token.
      *
-     * @return string
      * @throws SpotifyAuthException
      */
     public function getAccessToken(): string

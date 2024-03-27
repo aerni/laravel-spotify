@@ -20,9 +20,6 @@ class SpotifyRequest
     /**
      * Make the API request.
      *
-     * @param string $endpoint
-     * @param array $params
-     * @return array
      * @throws SpotifyApiException
      */
     public function get(string $endpoint, array $params = []): array
@@ -38,7 +35,7 @@ class SpotifyRequest
         } catch (RequestException $e) {
             $errorResponse = $e->getResponse();
             $status = $errorResponse->getStatusCode();
-            ;
+
             $message = $errorResponse->getReasonPhrase();
 
             throw new SpotifyApiException($message, $status, $errorResponse);
