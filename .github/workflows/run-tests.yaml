@@ -1,25 +1,26 @@
 name: Run Tests
 
-on: [push, pull_request, workflow_dispatch]
+on: ['push', 'pull_request']
 
 jobs:
-  phpunit:
-    runs-on: ubuntu-latest
+  test:
+    runs-on: ${{ matrix.os }}
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
-        php: [8.2, 8.1]
-        laravel: [10.*]
+        os: [ubuntu-latest]
+        php: [8.3, 8.2]
+        laravel: [11.*]
         stability: [prefer-lowest, prefer-stable]
         include:
-          - laravel: 10.*
-            testbench: ^8.0
+          - laravel: 11.*
+            testbench: 8.*
 
     name: PHP ${{ matrix.php }} – Laravel ${{ matrix.laravel }} - ${{ matrix.stability }}
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
