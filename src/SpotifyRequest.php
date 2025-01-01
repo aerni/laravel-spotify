@@ -8,13 +8,14 @@ use SpotifyClient;
 
 class SpotifyRequest
 {
-    private const SPOTIFY_API_URL = 'https://api.spotify.com/v1';
-
     private $accessToken;
+
+    private $apiUrl;
 
     public function __construct(string $accessToken)
     {
         $this->accessToken = $accessToken;
+        $this->apiUrl = config('spotify.api_url','https://api.spotify.com/v1');
     }
 
     /**
@@ -25,7 +26,7 @@ class SpotifyRequest
     public function get(string $endpoint, array $params = []): array
     {
         try {
-            $response = SpotifyClient::get(self::SPOTIFY_API_URL.$endpoint.'?'.http_build_query($params), [
+            $response = SpotifyClient::get($this->apiUrl.$endpoint.'?'.http_build_query($params), [
                 'headers' => [
                     'Content-Type' => 'application/json',
                     'Accepts' => 'application/json',
