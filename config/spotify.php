@@ -1,14 +1,16 @@
 <?php
 
 return [
+
     /*
     |--------------------------------------------------------------------------
     | API Base URL
     |--------------------------------------------------------------------------
     |
-    | Base URL of the spotify API.
+    | Here you may define the base URL of the Spotify API.
     |
     */
+
     'api_url' => env('SPOTIFY_API_URL', 'https://api.spotify.com/v1'),
 
     /*
