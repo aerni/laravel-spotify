@@ -2,6 +2,4 @@
 
 namespace Aerni\Spotify\Exceptions;
 
-class SpotifyAuthException extends SpotifyException
-{
-}
+class SpotifyAuthException extends SpotifyException {}

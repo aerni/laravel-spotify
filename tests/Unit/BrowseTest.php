@@ -50,7 +50,7 @@ class BrowseTest extends TestCase
     {
         $artistIds = ['0ADKN6ZiuyyScOTXloddx9', '3hyTRrdgrNuAExA3tNS8CA', '2FNOMU2OOusxW671wZKbKt'];
 
-        $seed = (new SpotifySeed())
+        $seed = (new SpotifySeed)
             ->addArtists($artistIds);
 
         $recommendations = Spotify::recommendations($seed)->get();

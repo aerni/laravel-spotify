@@ -10,7 +10,7 @@ class SpotifyClientServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(SpotifyClient::class, function () {
-            return new SpotifyClient();
+            return new SpotifyClient;
         });
     }
 }

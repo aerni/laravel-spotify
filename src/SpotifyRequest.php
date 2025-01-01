@@ -15,7 +15,7 @@ class SpotifyRequest
     public function __construct(string $accessToken)
     {
         $this->accessToken = $accessToken;
-        $this->apiUrl = config('spotify.api_url','https://api.spotify.com/v1');
+        $this->apiUrl = config('spotify.api_url', 'https://api.spotify.com/v1');
     }
 
     /**
