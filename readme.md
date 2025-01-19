@@ -371,12 +371,12 @@ SpotifySeed::addArtists('artist_id_1, artist_id_2, artist_id_3');
 SpotifySeed::setArtists('artist_id_1, artist_id_2, artist_id_3');
 
 // Add a genre by ID.
-SpotifySeed::addGerne('gerne_id');
+SpotifySeed::addGenre('genre_id');
 
 // Add several genres by IDs. Provide a string or array of IDs.
-SpotifySeed::addGenres('gerne_id_1, gerne_id_2, gerne_id_3');
+SpotifySeed::addGenres('genre_id_1, genre_id_2, genre_id_3');
 
-// Set gernes by IDs. Provide a string or array of IDs. This overwrites previously added genres.
+// Set genres by IDs. Provide a string or array of IDs. This overwrites previously added genres.
 SpotifySeed::setGenres('genre_id_1, genre_id_2, genre_id_3');
 
 // Add a track by ID.
