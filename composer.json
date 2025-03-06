@@ -1,75 +1,75 @@
 {
-	"name": "aerni/laravel-spotify",
-	"description": "A Laravel wrapper for the Spotify Web API",
-	"keywords": [
-		"laravel",
-		"spotify",
-		"spotify-web-api",
-		"spotify-api",
-		"wrapper",
-		"api",
-		"music",
-		"songs",
-		"playlists",
-		"playlist",
-		"track",
-		"tracks",
-		"album",
-		"albums",
-		"artist",
-		"artists",
-		"browse",
-		"search"
-	],
-	"homepage": "https://github.com/aerni/laravel-spotify",
-	"license": "MIT",
-	"authors": [
-		{
-			"name": "Michael Aerni",
-			"email": "hello@michaelaerni.ch",
-			"homepage": "https://www.michaelaerni.ch",
-			"role": "Developer"
-		}
-	],
-	"require": {
-		"php": "^8.2",
-		"guzzlehttp/guzzle": "^7.0",
-		"illuminate/support": "^11.0"
-	},
-	"require-dev": {
-        "orchestra/testbench": "^9.0",
+    "name": "aerni/laravel-spotify",
+    "description": "A Laravel wrapper for the Spotify Web API",
+    "keywords": [
+        "laravel",
+        "spotify",
+        "spotify-web-api",
+        "spotify-api",
+        "wrapper",
+        "api",
+        "music",
+        "songs",
+        "playlists",
+        "playlist",
+        "track",
+        "tracks",
+        "album",
+        "albums",
+        "artist",
+        "artists",
+        "browse",
+        "search"
+    ],
+    "homepage": "https://github.com/aerni/laravel-spotify",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Aerni",
+            "email": "hello@michaelaerni.ch",
+            "homepage": "https://www.michaelaerni.ch",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "guzzlehttp/guzzle": "^7.0",
+        "illuminate/support": "^11.0|^12.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0|^10.0",
         "nunomaduro/collision": "^8.1",
-        "phpunit/phpunit": "^10.0"
-	},
-	"autoload": {
-		"psr-4": {
-			"Aerni\\Spotify\\": "src"
-		}
-	},
-	"autoload-dev": {
-		"psr-4": {
-			"Aerni\\Spotify\\Tests\\": "tests"
-		}
-	},
-	"scripts": {
-		"test": "vendor/bin/phpunit"
-	},
-	"extra": {
-		"laravel": {
-			"providers": [
-				"Aerni\\Spotify\\Providers\\SpotifyClientServiceProvider",
-				"Aerni\\Spotify\\Providers\\SpotifyServiceProvider"
-			],
-			"aliases": {
-				"SpotifyClient": "Aerni\\Spotify\\Facades\\SpotifyClientFacade",
-				"Spotify": "Aerni\\Spotify\\Facades\\SpotifyFacade",
-				"SpotifySeed": "Aerni\\Spotify\\Facades\\SpotifySeedFacade"
-			}
-		}
-	},
-	"config": {
-		"sort-packages": true
-	},
-	"prefer-stable": true,
-	"minimum-stability": "dev"
+        "phpunit/phpunit": "^10.0|^11.5.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Aerni\\Spotify\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Aerni\\Spotify\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Aerni\\Spotify\\Providers\\SpotifyClientServiceProvider",
+                "Aerni\\Spotify\\Providers\\SpotifyServiceProvider"
+            ],
+            "aliases": {
+                "SpotifyClient": "Aerni\\Spotify\\Facades\\SpotifyClientFacade",
+                "Spotify": "Aerni\\Spotify\\Facades\\SpotifyFacade",
+                "SpotifySeed": "Aerni\\Spotify\\Facades\\SpotifySeedFacade"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
 }
