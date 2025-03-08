@@ -2,7 +2,6 @@
 
 namespace Aerni\Spotify\Tests;
 
-use Aerni\Spotify\SpotifySeed;
 use Spotify;
 
 class BrowseTest extends TestCase
