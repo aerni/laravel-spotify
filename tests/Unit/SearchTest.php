@@ -79,7 +79,7 @@ class SearchTest extends TestCase
 
     public function test_can_search_for_playlists(): void
     {
-        $query = 'Worship';
+        $query = 'UK Garage';
 
         $playlists = Spotify::searchPlaylists($query)->limit(20)->offset(1)->get();
         $playlistName = $playlists['playlists']['items'][0]['name'];

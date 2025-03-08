@@ -6,9 +6,9 @@ use Spotify;
 
 class EpisodesTest extends TestCase
 {
-    private $episodeId = '512ojhOuo1ktJprKbVcKyQ';
+    private $episodeId = '0bA111JKkvh84dM2evLENB';
 
-    private $episodeIds = ['512ojhOuo1ktJprKbVcKyQ', '77o6BIVlYM3msb4MMIL1jH', '0Q86acNRm6V9GYx55SXKwf'];
+    private $episodeIds = ['0bA111JKkvh84dM2evLENB', '7HLqYy8myk9BduYj6vFDHB', '1iUYyZ5MCBwGPfaJLnILjY'];
 
     public function test_can_get_several_episodes(): void
     {
