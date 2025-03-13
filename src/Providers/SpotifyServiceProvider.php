@@ -6,11 +6,16 @@ use Aerni\Spotify\Spotify;
 use Aerni\Spotify\SpotifyAuth;
 use Aerni\Spotify\SpotifyRequest;
 use Illuminate\Support\ServiceProvider;
+use Aerni\Spotify\Clients\SpotifyClient;
 
 class SpotifyServiceProvider extends ServiceProvider
 {
     public function register()
     {
+        $this->app->bind(SpotifyClient::class, function () {
+            return new SpotifyClient;
+        });
+
         $this->app->singleton(Spotify::class, function () {
             $defaultConfig = [
                 'country' => config('spotify.default_config.country'),
