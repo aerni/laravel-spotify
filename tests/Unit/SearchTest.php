@@ -67,7 +67,7 @@ class SearchTest extends TestCase
 
     public function test_can_search_for_episodes(): void
     {
-        $query = 'Worship';
+        $query = 'Mike Winger';
 
         $episodes = Spotify::searchEpisodes($query)->limit(10)->offset(20)->get();
         $episodeName = $episodes['episodes']['items'][0]['name'];
