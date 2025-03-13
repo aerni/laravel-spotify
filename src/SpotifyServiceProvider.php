@@ -1,10 +1,8 @@
 <?php
 
-namespace Aerni\Spotify\Providers;
+namespace Aerni\Spotify;
 
-use Aerni\Spotify\Spotify;
-use Aerni\Spotify\SpotifyAuth;
-use Aerni\Spotify\SpotifyRequest;
+use Aerni\Spotify\Clients\SpotifyClient;
 use Illuminate\Support\ServiceProvider;
 
 class SpotifyServiceProvider extends ServiceProvider
@@ -28,6 +26,10 @@ class SpotifyServiceProvider extends ServiceProvider
             return new SpotifyAuth($clientId, $clientSecret);
         });
 
+        $this->app->bind(SpotifyClient::class, function () {
+            return new SpotifyClient;
+        });
+
         $this->app->bind(SpotifyRequest::class, function () {
             $accessToken = $this->app->make(SpotifyAuth::class)->getAccessToken();
 
@@ -37,10 +39,10 @@ class SpotifyServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $this->mergeConfigFrom(__DIR__.'/../../config/spotify.php', 'spotify');
+        $this->mergeConfigFrom(__DIR__.'/../config/spotify.php', 'spotify');
 
         $this->publishes([
-            __DIR__.'/../../config/spotify.php' => config_path('spotify.php'),
+            __DIR__.'/../config/spotify.php' => config_path('spotify.php'),
         ]);
     }
 }

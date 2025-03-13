@@ -27,16 +27,7 @@ abstract class TestCase extends Orchestra
     protected function getPackageProviders($app): array
     {
         return [
-            'Aerni\Spotify\Providers\SpotifyClientServiceProvider',
-            'Aerni\Spotify\Providers\SpotifyServiceProvider',
-        ];
-    }
-
-    protected function getPackageAliases($app): array
-    {
-        return [
-            'SpotifyClient' => 'Aerni\Spotify\Facades\SpotifyClientFacade',
-            'Spotify' => 'Aerni\Spotify\Facades\\SpotifyFacade',
+            'Aerni\Spotify\SpotifyServiceProvider',
         ];
     }
 }

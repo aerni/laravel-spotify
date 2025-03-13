@@ -2,13 +2,12 @@
 
 namespace Aerni\Spotify\Facades;
 
-use Aerni\Spotify\Spotify;
 use Illuminate\Support\Facades\Facade;
 
-class SpotifyFacade extends Facade
+class SpotifyClient extends Facade
 {
     public static function getFacadeAccessor()
     {
-        return Spotify::class;
+        return \Aerni\Spotify\Clients\SpotifyClient::class;
     }
 }

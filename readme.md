@@ -95,7 +95,7 @@ SPOTIFY_CLIENT_SECRET=********************************
 Import the package at the top of your file. All of the following examples use the [Facade](https://laravel.com/docs/master/facades).
 
 ```php
-use Spotify;
+use Aerni\Spotify\Facades\Spotify;
 ```
 
 Search for tracks with the name `Closed on Sunday`.
