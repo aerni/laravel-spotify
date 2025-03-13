@@ -171,7 +171,6 @@ Spotify::albums(['album_id', 'album_id_2', 'album_id_3'])->get();
 ```
 
 ### Albums
-[Spotify Web API Reference on Albums](https://developer.spotify.com/documentation/web-api/reference/albums/)
 
 ```php
 // Get an album by ID.
@@ -185,7 +184,6 @@ Spotify::albumTracks('album_id')->get();
 ```
 
 ### Artists
-[Spotify Web API Reference on Artists](https://developer.spotify.com/documentation/web-api/reference/artists/)
 
 ```php
 // Get an artist by ID.
@@ -202,7 +200,6 @@ Spotify::artistTopTracks('artist_id')->get();
 ```
 
 ### Browse
-[Spotify Web API Reference on Browse](https://developer.spotify.com/documentation/web-api/reference/browse/)
 
 ```php
 // Get a category by ID.
@@ -216,7 +213,6 @@ Spotify::newReleases()->get();
 ```
 
 ### Episodes
-[Spotify Web API Reference on Episodes](https://developer.spotify.com/documentation/web-api/reference/episodes/)
 
 ```php
 // Get an episode by ID.
@@ -227,7 +223,6 @@ Spotify::episodes('episode_id, episode_id_2, episode_id_3')->get();
 ```
 
 ### Playlists
-[Spotify Web API Reference on Playlists](https://developer.spotify.com/documentation/web-api/reference/playlists/)
 
 ```php
 // Get a playlist by ID.
@@ -241,7 +236,6 @@ Spotify::playlistCoverImage('playlist_id')->get();
 ```
 
 ### Search
-[Spotify Web API Reference on Search](https://developer.spotify.com/documentation/web-api/reference/search/)
 
 ```php
 // Search items by query. Provide a string or array to the second parameter.
@@ -267,7 +261,6 @@ Spotify::searchTracks('query')->get();
 ```
 
 ### Shows
-[Spotify Web API Reference on Shows](https://developer.spotify.com/documentation/web-api/reference/shows/)
 
 ```php
 // Get a show by ID.
@@ -281,7 +274,6 @@ Spotify::showEpisodes('show_id')->get();
 ```
 
 ### Tracks
-[Spotify Web API Reference on Tracks](https://developer.spotify.com/documentation/web-api/reference/tracks/)
 
 ```php
 // Get a track by ID.
@@ -292,7 +284,6 @@ Spotify::tracks('track_id, track_id_2, track_id_3')->get();
 ```
 
 ### User's Profile
-[Spotify Web API Reference on User's Profile](https://developer.spotify.com/documentation/web-api/reference/users-profile/)
 
 ```php
 // Get a user's profile
