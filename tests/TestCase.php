@@ -27,7 +27,7 @@ abstract class TestCase extends Orchestra
     protected function getPackageProviders($app): array
     {
         return [
-            'Aerni\Spotify\Providers\SpotifyServiceProvider',
+            'Aerni\Spotify\SpotifyServiceProvider',
         ];
     }
 }
