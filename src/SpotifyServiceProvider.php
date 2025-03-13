@@ -12,10 +12,6 @@ class SpotifyServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->app->bind(SpotifyClient::class, function () {
-            return new SpotifyClient;
-        });
-
         $this->app->singleton(Spotify::class, function () {
             $defaultConfig = [
                 'country' => config('spotify.default_config.country'),
@@ -31,6 +27,10 @@ class SpotifyServiceProvider extends ServiceProvider
             $clientSecret = config('spotify.auth.client_secret');
 
             return new SpotifyAuth($clientId, $clientSecret);
+        });
+
+        $this->app->bind(SpotifyClient::class, function () {
+            return new SpotifyClient;
         });
 
         $this->app->bind(SpotifyRequest::class, function () {
