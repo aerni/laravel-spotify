@@ -24,7 +24,6 @@
     <a href="#usage-example">Usage Example</a> •
     <a href="#optional-parameters">Optional Parameters</a> •
     <a href="#spotify-api-reference">Spotify API Reference</a> •
-    <a href="#recommendations">Recommendations</a>
     <br>
     <br>
 </p>
