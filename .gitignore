@@ -15,3 +15,5 @@ npm-debug.log
 yarn-error.log
 .DS_Store
 coverage.xml
+.idea
+.phpunit.cache

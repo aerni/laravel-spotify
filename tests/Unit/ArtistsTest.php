@@ -32,13 +32,6 @@ class ArtistsTest extends TestCase
         $this->assertEquals($artist, $this->artistId);
     }
 
-    public function test_can_get_artist_related_artists(): void
-    {
-        $artists = Spotify::artistRelatedArtists($this->artistId)->get();
-
-        $this->assertArrayHasKey('artists', $artists);
-    }
-
     public function test_can_get_several_artists(): void
     {
         $artists = Spotify::artists($this->artistIds)->get();

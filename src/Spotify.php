@@ -100,16 +100,6 @@ class Spotify
     }
 
     /**
-     * Get Spotify catalog information about artists similar to a given artist. Similarity is based on analysis of the Spotify community’s listening history.
-     */
-    public function artistRelatedArtists(string $id): PendingRequest
-    {
-        $endpoint = '/artists/'.$id.'/related-artists/';
-
-        return new PendingRequest($endpoint);
-    }
-
-    /**
      * Get Spotify catalog information for several artists based on their Spotify IDs.
      *
      * @param  array|string  $ids
@@ -135,22 +125,6 @@ class Spotify
         $acceptedParams = [
             'country' => $this->defaultConfig['country'],
             'locale' => $this->defaultConfig['locale'],
-        ];
-
-        return new PendingRequest($endpoint, $acceptedParams);
-    }
-
-    /**
-     * Get a list of Spotify playlists tagged with a particular category.
-     */
-    public function categoryPlaylists(string $id): PendingRequest
-    {
-        $endpoint = '/browse/categories/'.$id.'/playlists/';
-
-        $acceptedParams = [
-            'country' => $this->defaultConfig['country'],
-            'limit' => null,
-            'offset' => null,
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -205,24 +179,6 @@ class Spotify
     }
 
     /**
-     * Get a list of Spotify featured playlists (shown, for example, on a Spotify player’s ‘Browse’ tab).
-     */
-    public function featuredPlaylists(): PendingRequest
-    {
-        $endpoint = '/browse/featured-playlists/';
-
-        $acceptedParams = [
-            'locale' => $this->defaultConfig['locale'],
-            'country' => $this->defaultConfig['country'],
-            'timestamp' => null,
-            'limit' => null,
-            'offset' => null,
-        ];
-
-        return new PendingRequest($endpoint, $acceptedParams);
-    }
-
-    /**
      * Get a list of new album releases featured in Spotify (shown, for example, on a Spotify player’s “Browse” tab).
      */
     public function newReleases(): PendingRequest
@@ -236,31 +192,6 @@ class Spotify
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
-    }
-
-    /**
-     * Create a playlist-style listening experience based on seed artists, tracks and genres.
-     */
-    public function recommendations(SpotifySeed $seed): PendingRequest
-    {
-        $endpoint = '/recommendations/';
-
-        $acceptedParams = array_merge([
-            'limit' => null,
-            'market' => $this->defaultConfig['market'],
-        ], $seed->getArrayForApi());
-
-        return new PendingRequest($endpoint, $acceptedParams);
-    }
-
-    /**
-     * Get available genre seeds.
-     */
-    public function availableGenreSeeds(): PendingRequest
-    {
-        $endpoint = '/recommendations/available-genre-seeds/';
-
-        return new PendingRequest($endpoint);
     }
 
     /**
@@ -482,42 +413,6 @@ class Spotify
             'limit' => null,
             'offset' => null,
             'market' => $this->defaultConfig['market'],
-        ];
-
-        return new PendingRequest($endpoint, $acceptedParams);
-    }
-
-    /**
-     * Get a detailed audio analysis for a single track identified by its unique Spotify ID.
-     */
-    public function audioAnalysisForTrack(string $id): PendingRequest
-    {
-        $endpoint = '/audio-analysis/'.$id;
-
-        return new PendingRequest($endpoint);
-    }
-
-    /**
-     * Get audio feature information for a single track identified by its unique Spotify ID.
-     */
-    public function audioFeaturesForTrack(string $id): PendingRequest
-    {
-        $endpoint = '/audio-features/'.$id;
-
-        return new PendingRequest($endpoint);
-    }
-
-    /**
-     * Get audio features for multiple tracks based on their Spotify IDs.
-     *
-     * @param  array|string  $ids
-     */
-    public function audioFeaturesForTracks($ids): PendingRequest
-    {
-        $endpoint = '/audio-features/';
-
-        $acceptedParams = [
-            'ids' => Validator::validateArgument('ids', $ids),
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
