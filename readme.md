@@ -4,7 +4,7 @@
     Spotify for Laravel
     <br>
 </h1>
-<h4 align="center">An easy to use Spotify Web API wrapper for Laravel 11</h4>
+<h4 align="center">An easy to use Spotify Web API wrapper for Laravel</h4>
 <p align="center">
     <a href="https://packagist.org/packages/aerni/laravel-spotify">
         <img src="https://flat.badgen.net/packagist/v/aerni/laravel-spotify" alt="Packagist version">
