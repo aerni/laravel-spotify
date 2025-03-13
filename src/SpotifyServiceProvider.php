@@ -1,6 +1,6 @@
 <?php
 
-namespace Aerni\Spotify\Providers;
+namespace Aerni\Spotify;
 
 use Aerni\Spotify\Spotify;
 use Aerni\Spotify\SpotifyAuth;

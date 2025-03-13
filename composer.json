@@ -57,7 +57,7 @@
 	"extra": {
 		"laravel": {
 			"providers": [
-				"Aerni\\Spotify\\Providers\\SpotifyServiceProvider"
+				"Aerni\\Spotify\\SpotifyServiceProvider"
 			]
 		}
 	},
