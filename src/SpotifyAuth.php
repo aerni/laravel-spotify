@@ -5,7 +5,7 @@ namespace Aerni\Spotify;
 use Aerni\Spotify\Exceptions\SpotifyAuthException;
 use GuzzleHttp\Exception\RequestException;
 use Illuminate\Support\Facades\Cache;
-use SpotifyClient;
+use Aerni\Spotify\Facades\SpotifyClient;
 
 class SpotifyAuth
 {

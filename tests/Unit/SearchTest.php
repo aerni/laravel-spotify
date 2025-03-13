@@ -3,7 +3,7 @@
 namespace Aerni\Spotify\Tests;
 
 use Exception;
-use Spotify;
+use Aerni\Spotify\Facades\Spotify;
 
 class SearchTest extends TestCase
 {

@@ -59,11 +59,7 @@
 			"providers": [
 				"Aerni\\Spotify\\Providers\\SpotifyClientServiceProvider",
 				"Aerni\\Spotify\\Providers\\SpotifyServiceProvider"
-			],
-			"aliases": {
-				"SpotifyClient": "Aerni\\Spotify\\Facades\\SpotifyClientFacade",
-				"Spotify": "Aerni\\Spotify\\Facades\\SpotifyFacade"
-			}
+			]
 		}
 	},
 	"config": {

@@ -2,7 +2,7 @@
 
 namespace Aerni\Spotify\Tests;
 
-use Spotify;
+use Aerni\Spotify\Facades\Spotify;
 
 class UsersTest extends TestCase
 {

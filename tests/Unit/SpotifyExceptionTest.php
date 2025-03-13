@@ -7,7 +7,7 @@ use Aerni\Spotify\Exceptions\SpotifyAuthException;
 use Aerni\Spotify\SpotifyAuth;
 use Aerni\Spotify\SpotifyRequest;
 use GuzzleHttp\Psr7\Response;
-use Spotify;
+use Aerni\Spotify\Facades\Spotify;
 
 class SpotifyExceptionTest extends TestCase
 {
