@@ -3,8 +3,8 @@
 namespace Aerni\Spotify;
 
 use Aerni\Spotify\Exceptions\SpotifyApiException;
-use GuzzleHttp\Exception\RequestException;
 use Aerni\Spotify\Facades\SpotifyClient;
+use GuzzleHttp\Exception\RequestException;
 
 class SpotifyRequest
 {

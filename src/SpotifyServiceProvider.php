@@ -2,11 +2,8 @@
 
 namespace Aerni\Spotify;
 
-use Aerni\Spotify\Spotify;
-use Aerni\Spotify\SpotifyAuth;
-use Aerni\Spotify\SpotifyRequest;
-use Illuminate\Support\ServiceProvider;
 use Aerni\Spotify\Clients\SpotifyClient;
+use Illuminate\Support\ServiceProvider;
 
 class SpotifyServiceProvider extends ServiceProvider
 {
