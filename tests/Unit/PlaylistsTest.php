@@ -6,7 +6,7 @@ use Spotify;
 
 class PlaylistsTest extends TestCase
 {
-    private $playlistId = '37i9dQZF1DWVYgpMbMPJMz';
+    private $playlistId = '1NLLcKrGXII2F2oRKZVatw';
 
     public function test_can_get_playlist_cover_image(): void
     {
