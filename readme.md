@@ -141,9 +141,6 @@ Spotify::searchAlbums('query')->market('US')->get();
 
 // Limit the response to a particular language.
 Spotify::category('category_id')->locale('en_US')->get();
-
-// Get results based on a specific date and time.
-Spotify::featuredPlaylists()->timestamp('2020-03-02T09:00:00')->get();
 ```
 
 ### Resetting Defaults
@@ -203,9 +200,6 @@ Spotify::artistAlbums('artist_id')->get();
 
 // Get the artist's top tracks by ID.
 Spotify::artistTopTracks('artist_id')->get();
-
-// Get an artist's related artists by ID.
-Spotify::artistRelatedArtists('artist_id')->get();
 ```
 
 ### Browse
@@ -215,23 +209,11 @@ Spotify::artistRelatedArtists('artist_id')->get();
 // Get a category by ID.
 Spotify::category('category_id')->get();
 
-// Get a category's playlists by ID.
-Spotify::categoryPlaylists('category_id')->get();
-
 // Get a list of categories.
 Spotify::categories()->get();
 
-// Get a list of featured playlists.
-Spotify::featuredPlaylists()->get();
-
 // Get a list of new releases.
 Spotify::newReleases()->get();
-
-// Get available genre seeds.
-Spotify::availableGenreSeeds()->get();
-
-// Get recommendations based on a seed.
-Spotify::recommendations($seed)->get();
 ```
 
 ### Episodes
@@ -308,15 +290,6 @@ Spotify::track('track_id')->get();
 
 // Get several tracks by IDs. Provide a string or array of IDs.
 Spotify::tracks('track_id, track_id_2, track_id_3')->get();
-
-// Get audio analysis for a track by ID.
-Spotify::audioAnalysisForTrack('track_id')->get();
-
-// Get audio features for a track by ID.
-Spotify::audioFeaturesForTrack('track_id')->get();
-
-// Get audio features for several tracks by ID. Provide a string or array of IDs.
-Spotify::audioFeaturesForTracks('track_id, track_id_2, track_id_3')->get();
 ```
 
 ### User's Profile
@@ -328,111 +301,6 @@ Spotify::user('user_id')->get();
 
 // Get a list of a user's playlists
 Spotify::userPlaylists('user_id')->get();
-```
-
-## Recommendations
-You can get personalized tracks using the [recommendations endpoint](https://developer.spotify.com/documentation/web-api/reference/browse/get-recommendations) by seeding artists, genres and tracks along with a bunch of adjustable properties such as energy, key and danceability.
-
-### Usage Example
-Import the `SpotifySeed` class. All of the following examples use the [Facade](https://laravel.com/docs/master/facades).
-
-```php
-use SpotifySeed;
-```
-
-Build your personalized `$seed`. You may chain as many methods as you want.
-
-```php
-$seed = SpotifySeed::setGenres(['gospel', 'pop', 'funk'])
-    ->setTargetValence(1.00)
-    ->setSpeechiness(0.3, 0.9)
-    ->setLiveness(0.3, 1.0);
-```
-
-Get your personalized tracks by passing the `$seed` to the `recommendations()` method.
-
-```php
-Spotify::recommendations($seed)->get();
-```
-
-### SpotifySeed API Reference
-**Note:** Any parameter that accepts multiple values can either receive a string with comma-separated values or an array of values.
-
-**Add artists, genres and tracks to your seed:**
-
-```php
-// Add an artist by ID.
-SpotifySeed::addArtist('artist_id');
-
-// Add several artists by IDs. Provide a string or array of IDs.
-SpotifySeed::addArtists('artist_id_1, artist_id_2, artist_id_3');
-
-// Set artists by IDs. Provide a string or array of IDs. This overwrites previously added artists.
-SpotifySeed::setArtists('artist_id_1, artist_id_2, artist_id_3');
-
-// Add a genre by ID.
-SpotifySeed::addGenre('genre_id');
-
-// Add several genres by IDs. Provide a string or array of IDs.
-SpotifySeed::addGenres('genre_id_1, genre_id_2, genre_id_3');
-
-// Set genres by IDs. Provide a string or array of IDs. This overwrites previously added genres.
-SpotifySeed::setGenres('genre_id_1, genre_id_2, genre_id_3');
-
-// Add a track by ID.
-SpotifySeed::addTrack('track_id');
-
-// Add several tracks by IDs. Provide a string or array of IDs.
-SpotifySeed::addTracks('track_id_1, track_id_2, track_id_3');
-
-// Set tracks by IDs. Provide a string or array of IDs. This overwrites previously added tracks.
-SpotifySeed::setTracks('track_id_1, track_id_2, track_id_3');
-```
-
-**Add tunable properties to your seed:**
-
-```php
-SpotifySeed::setAcousticness(float $min, float $max);
-SpotifySeed::setTargetAcousticness(float $target);
-
-SpotifySeed::setDanceability(float $min, float $max);
-SpotifySeed::setTargetDanceability(float $target);
-
-SpotifySeed::setDuration(int $min, int $max);
-SpotifySeed::setTargetDuration(int $target);
-
-SpotifySeed::setEnergy(float $min, float $max);
-SpotifySeed::setTargetEnergy(float $target);
-
-SpotifySeed::setInstrumentalness(float $min, float $max);
-SpotifySeed::setTargetInstrumentalness(float $target);
-
-SpotifySeed::setKey(int $min, int $max);
-SpotifySeed::setTargetKey(int $target);
-
-SpotifySeed::setLiveness(float $min, float $max);
-SpotifySeed::setTargetLiveness(float $target);
-
-SpotifySeed::setLoudness(float $min, float $max);
-SpotifySeed::setTargetLoudness(float $target);
-
-SpotifySeed::setMode(int $min, int $max);
-SpotifySeed::setTargetMode(int $target);
-
-SpotifySeed::setPopularity(float $min, float $max);
-SpotifySeed::setTargetPopularity(float $target);
-
-SpotifySeed::setSpeechiness(float $min, float $max);
-SpotifySeed::setTargetSpeechiness(float $target);
-
-SpotifySeed::setTempo(int $min, int $max);
-SpotifySeed::setTargetTempo(int $target);
-
-SpotifySeed::setTimeSignature(int $min, int $max);
-SpotifySeed::setTargetTimeSignature(int $target);
-
-SpotifySeed::setValence(float $min, float $max);
-SpotifySeed::setTargetValence(float $target);
 ```
 
 ## Tests
