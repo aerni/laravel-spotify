@@ -43,7 +43,7 @@ composer require aerni/laravel-spotify
 Publish the config of the package.
 
 ```bash
-php artisan vendor:publish --provider="Aerni\Spotify\Providers\SpotifyServiceProvider"
+php artisan vendor:publish --provider="Aerni\Spotify\SpotifyServiceProvider"
 ```
 
 The following config will be published to `config/spotify.php`.
